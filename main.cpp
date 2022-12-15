@@ -5,4 +5,6 @@ int main(void){
 
     cout << "deneme";
     cout << "mrb";
+    cout<<"ANANIN AMI DONUNDA"<<endl;
+    
 }
