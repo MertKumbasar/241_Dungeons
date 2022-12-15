@@ -9,5 +9,5 @@ void person::print(void){
 
 int main(void){
     cout << "mertin kodu";
-    //sadasşdiasşilasdşilşasdişaslş,asdli,şasdlşi,asdşasdlşi,,lşasdşlsd
+    cout << "meert kod2";
 }
