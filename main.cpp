@@ -35,6 +35,6 @@ int main(void){
         }
         cout << endl;   
     }
-    //commiy
+    // ALLAHI COMMİTLİYm
 
 }
