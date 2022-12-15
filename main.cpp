@@ -8,11 +8,5 @@ void person::print(void){
 }
 
 int main(void){
-    cout << "deneme";
-
-    cout << "deneme";
-    cout << "mrb";
-    cout<<"ANANIN AMI DONUNDA"<<endl;
-    cout <<" bunu ben yaptım(mert)";
-    //mrbabi31
+    cout << "mertin kodu ";
 }
