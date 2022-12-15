@@ -8,8 +8,6 @@ void person::print(void){
 }
 
 int main(void){
-    cout << "mertin kodu";
-    //sadasşdiasşilasdşilşasdişaslş,asdli,şasdlşi,asdşasdlşi,,lşasdşlsd
-    cout<<"sadlkaslşdkaşslkask";
-    cout << "meert kod2";
+    
+
 }
