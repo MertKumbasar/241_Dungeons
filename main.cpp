@@ -8,7 +8,7 @@ int main(void){
     cout << "deneme";
     cout << "mrb";
     cout<<"ANANIN AMI DONUNDA"<<endl;
-    
+    cout <<" bunu ben yaptım(mert)";
 }
 void person::print(void){
     cout<<"Ali boran buraya yazdı"<<endl;
