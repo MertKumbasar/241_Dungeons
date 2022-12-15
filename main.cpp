@@ -10,7 +10,7 @@ void person::print(void){
 }
 
 int main(void){
-    // bu son olsun bu olsun
+    // bu son olsun bu olsun 2
     int height,width;
     char map[30][30];
     for (size_t i = 0; i < height; i++){
