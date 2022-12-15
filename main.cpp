@@ -1,9 +1,11 @@
 #include <iostream>
+#include "Map.h"
 using namespace std;
-#include "class.h"
 
-int main(void)
+int main()
 {
-   cout << "günü kapatış";
-    
+
+   Map game_map;
+   game_map.printMap();
+   return 0;
 }
