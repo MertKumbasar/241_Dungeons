@@ -11,4 +11,5 @@ int main(void){
     cout << "mertin kodu";
     //sadasşdiasşilasdşilşasdişaslş,asdli,şasdlşi,asdşasdlşi,,lşasdşlsd
     Cout<<"sadlkaslşdkaşslkask";
+    cout << "meert kod2";
 }
