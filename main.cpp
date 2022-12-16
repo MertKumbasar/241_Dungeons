@@ -28,7 +28,6 @@ int main()
          case 'w':
                game_map.movePlayer_up();
                break;
-
          case 's':
                game_map.movePlayer_down();
                break;
@@ -39,7 +38,6 @@ int main()
          case 'd':
                game_map.movePlayer_right();
                break;
-               
          default:
                break;
          }
