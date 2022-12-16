@@ -22,7 +22,7 @@ int main()
    while(game_is_on){
       gotoxy(0,0);
       game_map.printMap();
-      Sleep(200);
+     
       if (_kbhit()){
         switch (getch()){  
          case 'w':
