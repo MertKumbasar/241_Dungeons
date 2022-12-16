@@ -37,52 +37,45 @@ void Map::printMap(){
     }
 }
 void Map::movePlayer_up(){
-    int temp_x = dir_x_of_player;
+    int temp_x = dir_x_of_player - 1;
     int temp_y = dir_y_of_player;
-    dir_x_of_player -= 1;
-    if(map[dir_x_of_player][dir_y_of_player] != '#'){
+   
+    if(map[temp_x][temp_y] != '#'){
+        map[dir_x_of_player][dir_y_of_player] = '.';
+        dir_x_of_player -= 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
-        map[temp_x][temp_y] = '.';
     }
-    else{
-        dir_x_of_player += 1;
-    }
+    
 }
 void Map::movePlayer_down(){
-    int temp_x = dir_x_of_player;
+    int temp_x = dir_x_of_player + 1;
     int temp_y = dir_y_of_player;
-    dir_x_of_player += 1;
-    if(map[dir_x_of_player][dir_y_of_player] != '#'){
+   
+    if(map[temp_x][temp_y] != '#'){
+        map[dir_x_of_player][dir_y_of_player] = '.';
+        dir_x_of_player += 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
-        map[temp_x][temp_y] = '.';
-    }
-    else{
-        dir_x_of_player -= 1;
     }
 }
 void Map::movePlayer_left(){
     int temp_x = dir_x_of_player;
-    int temp_y = dir_y_of_player;
-    dir_y_of_player -= 1;
-    if(map[dir_x_of_player][dir_y_of_player] != '#'){
+    int temp_y = dir_y_of_player - 1;
+   
+    if(map[temp_x][temp_y] != '#'){
+        map[dir_x_of_player][dir_y_of_player] = '.';
+        dir_y_of_player -= 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
-        map[temp_x][temp_y] = '.';
-    }
-    else{
-        dir_y_of_player += 1;
     }
     
 }
 void Map::movePlayer_right(){
     int temp_x = dir_x_of_player;
-    int temp_y = dir_y_of_player;
-    dir_y_of_player += 1;
-    if(map[dir_x_of_player][dir_y_of_player] != '#'){
+    int temp_y = dir_y_of_player + 1;
+   
+    if(map[temp_x][temp_y] != '#'){
+        map[dir_x_of_player][dir_y_of_player] = '.';
+        dir_y_of_player += 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
-        map[temp_x][temp_y] = '.';
-    }
-    else{
-        dir_y_of_player -= 1;
     }
 }
 
