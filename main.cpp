@@ -1,4 +1,9 @@
 #include <iostream>
+#include <stdlib.h>
+#include <windows.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "Map.h"
 #include "Map.cpp"
 using namespace std;
