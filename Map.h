@@ -6,8 +6,8 @@ class Map{
     private:
         int height = 21;
         int width = 21;
-        char map[30][30];
     public:
+        char map[30][30];
         int dir_x_of_player = 2;
         int dir_y_of_player = 2;
         Map();
