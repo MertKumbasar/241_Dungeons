@@ -1,11 +1,8 @@
 #include <iostream>
-#include <stdlib.h>
-#include <windows.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <string>
 #include "Map.h"
 #include "Map.cpp"
+#include "Player.h"
 using namespace std;
 
 // function to move cursor to top
@@ -16,21 +13,31 @@ void gotoxy(int x, int y) {
 }
 // function to move cursor to top
 int main()
+
 {
+
+      Player p1;
+      cout<<p1.GetHealth()<<endl;
+
+
+
    int game_is_on = 1;
    Map game_map;
    while(game_is_on){
       gotoxy(0,0);
       game_map.printMap();
-     
+      Sleep(100);
       if (_kbhit()){
         switch (getch()){  
+
          case 'w':
                game_map.movePlayer_up();
                break;
+
          case 's':
                game_map.movePlayer_down();
                break;
+
          case 'a':
                game_map.movePlayer_left();
                break;
@@ -38,12 +45,14 @@ int main()
          case 'd':
                game_map.movePlayer_right();
                break;
+               
          default:
                break;
+            
          }
-      }
-
+    }
+     
    }
-
    return 0;
 }
+
