@@ -1,12 +1,15 @@
+
 #ifndef Player_H
 #define Player_H
 
+#include <iostream>
+using namespace std;
 
 class Player{
     
 
     protected:
-        string Name;
+        string name;
         int Health=0;
         int Mana;
         int Level;
@@ -22,8 +25,8 @@ class Player{
     //Destructor//
     
     //Methods//
-    void Setname(string input){Name = input;}
-    string GetName(void){return Name;}
+    void Setname(string input){name = input;}
+    string GetName(void){return name;}
     void SetHealth(int input){Health=input;}
     int GetHealth(void){return Health;}
     
