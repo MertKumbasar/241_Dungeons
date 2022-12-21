@@ -44,7 +44,6 @@ void Map::movePlayer_up(){
         dir_x_of_player -= 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
     }
-    
 }
 void Map::movePlayer_down(){
     int temp_x = dir_x_of_player + 1;
