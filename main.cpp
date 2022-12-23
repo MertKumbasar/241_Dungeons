@@ -4,6 +4,10 @@
 #include "Map.h"
 #include "Map.cpp"
 #include "Player.h"
+#include "player.cpp"
+#include "Enemy.h"
+#include "Enemy.cpp"
+
 using namespace std;
 
 // function to move cursor to top

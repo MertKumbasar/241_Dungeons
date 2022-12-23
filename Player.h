@@ -3,34 +3,82 @@
 #define Player_H
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Player{
-    
 
-    protected:
-        string name;
-        int Health=0;
-        int Mana;
-        int Level;
-        int Xp;
+    protected:  
+
+        //position on the map//
+        string Name;
+        int Score;
+        int Defense;
+        int Health;
         int Attack;
         int Defense;
+        int Total_Gold;
+        //İtem Array(vector)??//
+
     public:
     //Default Constructor//
+
     
     //Overloaded Constructors//
     
+    //Copy constructor//
+
+    //Move Constructor??//
 
     //Destructor//
     
-    //Methods//
-    void Setname(string input){name = input;}
-    string GetName(void){return name;}
+    //Setters//
+    void Setname(string input){Name = input;}
     void SetHealth(int input){Health=input;}
+    void SetScore(int input){Score=input;}
+    void SetTotalGold(int input){Total_Gold=input;}
+    //Getters//
+    string GetName(void){return Name;}
     int GetHealth(void){return Health;}
+    int GetScore(void){return Score;}
+    int GetTotalGold(void){return Total_Gold;}
+    void virtual PrintStatus(void);//function for printing player status//
+    //Move method//
+
+    //Attack method//
+
+    //Defend Method//
+
     
 
+};
+
+
+class Warior:public Player{
+
+    private:
+        //A Furry meter which goes up when defending resulting more attack power//
+    
+
+
+};
+
+
+class Mage:public Player{
+
+    private:
+        int mana;
+        //Magic scrolls(???)//
+
+
+};
+
+
+class Rouge:public Player{
+
+    private:
+        int Crit_Strike_Chance;//???//
+        
 
 
 };
