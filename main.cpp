@@ -7,6 +7,8 @@
 #include "player.cpp"
 #include "Enemy.h"
 #include "Enemy.cpp"
+#include "Item.h"
+#include "Item.cpp"
 
 using namespace std;
 
