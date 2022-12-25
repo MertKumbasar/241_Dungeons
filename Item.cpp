@@ -2,7 +2,10 @@
 #include "Item.h"
 using namespace std;
 
-ostream& operator<<(ostream &os, const Item &obj)
+
+// Revise//
+
+/*ostream& operator<<(ostream &os, const Item &obj)
 {
     for (size_t i=0; i<obj.Numberofitems; i++)
     {
@@ -11,3 +14,4 @@ ostream& operator<<(ostream &os, const Item &obj)
     cout << endl;
     return os;
 }
+*/

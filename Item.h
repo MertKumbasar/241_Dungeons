@@ -9,11 +9,15 @@ protected:
     int defensePower;
     int healthIncreaser;
     int cost;
-    int Numberofitems;
 public:
-    // default const
+    // default const //
+    Item():attackPower{0},defensePower{0},healthIncreaser{0},cost{0}{}
+    //Overloaded Constructor//
+    Item(int x,int y,int z,int k):attackPower{x},defensePower{y},healthIncreaser{z},cost{k}{}
     // destructor
-    // copy const
+    ~Item(){}
+    // copy constructor//
+    Item(const Item &obj):attackPower{obj.attackPower},defensePower{obj.defensePower},healthIncreaser{obj.healthIncreaser},cost{obj.cost}{} 
     // move const ????
     //Getters//
     int getAttackPower() { return attackPower; };
@@ -28,4 +32,20 @@ public:
 
     friend ostream &operator<<(ostream &os, const Item &obj);
 };
+
+
+class MeleeWepon:public Item{
+
+
+
+};
+
+
+class MagicScroll:public Item{
+
+
+
+};
+
+
 #endif
