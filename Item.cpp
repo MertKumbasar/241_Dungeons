@@ -2,6 +2,16 @@
 #include "Item.h"
 using namespace std;
 
+void Item:: PrintItemStatus(void){
+
+    cout<<"Attack Power:"<<attackPower<<endl;
+    cout<<"Defense Power:"<<defensePower<<endl;
+    cout<<"Health Bonus:"<<healthBonus<<endl;
+    cout<<"Cost:"<<cost<<endl;
+
+}
+
+
 
 // Revise//
 
