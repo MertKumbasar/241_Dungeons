@@ -18,7 +18,8 @@ protected:
     int Health;
     int Attack;
     int Total_Gold;
-    Item *items;
+    Item itemsList[5];
+    int nrOfItems{0};
 
 public:
     // Default Constructor//
@@ -36,12 +37,15 @@ public:
     void SetHealth(int input) { Health = input; }
     void SetScore(int input) { Score = input; }
     void SetTotalGold(int input) { Total_Gold = input; }
+
     // Getters//
     string GetName(void) { return Name; }
     int GetHealth(void) { return Health; }
     int GetScore(void) { return Score; }
     int GetTotalGold(void) { return Total_Gold; }
-    void virtual PrintStatus(void); // function for printing player status//
+    int GetnrOfItems() { return nrOfItems; };
+    virtual void PrintStatus(void); // function for printing player status//
+
     // Move method//
 
     // Attack method//
@@ -49,11 +53,13 @@ public:
     // Defend Method//
 };
 
-class Warior : public Player
+class Warrior : public Player
 {
 
 private:
     // A Furry meter which goes up when defending resulting more attack power//
+public:
+    void PrintStatus(void) override;
 };
 
 class Mage : public Player
@@ -62,6 +68,8 @@ class Mage : public Player
 private:
     int mana;
     // Magic scrolls(???)//
+public:
+    void PrintStatus(void) override;
 };
 
 class Rouge : public Player
@@ -69,6 +77,8 @@ class Rouge : public Player
 
 private:
     int Crit_Strike_Chance; //???//
+public:
+    void PrintStatus(void) override;
 };
 
 #endif

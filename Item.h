@@ -24,5 +24,7 @@ public:
     void sethealthIncreaser(int healthIncreaser) { this->healthIncreaser = healthIncreaser; };
     int getcost() { return cost; };
     void setcost(int cost) { this->cost = cost; };
+
+    friend ostream &operator<<(ostream &os, const Item &obj);
 };
 #endif
