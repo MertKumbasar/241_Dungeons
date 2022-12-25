@@ -12,12 +12,12 @@ class Player
 
 protected:
     // position on the map//
-    string name;
-    int score;
-    int defense;
-    int health;
-    int attack;
-    int total_Gold;
+    string Name;
+    int Score;
+    int Defense;
+    int Health;
+    int Attack;
+    int Total_Gold;
     Item *items;
 
 public:
