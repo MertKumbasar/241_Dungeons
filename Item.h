@@ -3,6 +3,7 @@
 using namespace std;
 #include "Player.h"
 #include "player.cpp"
+#include <string>
 
 class Item
 {
@@ -51,7 +52,7 @@ class MeleeWepon:public Item{
     //Default Constructor//
     MeleeWepon():Item(),Name{"Unknwon"},NumberofUsesLeft{0}{}
     //Overloaded Constructor//
-    Meleewepon(int x,int y,int c,string n):Item(x,y,c),Name{n},NumberofUsesLeft{5}{}
+    MeleeWepon(int x,int y,int c,string n):Item(x,y,c),Name{n},NumberofUsesLeft{5}{}
 
 
 
