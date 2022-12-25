@@ -2,11 +2,11 @@
 #include "Item.h"
 using namespace std;
 
-Item::ostream &operator<<(ostream &os, const Item &obj) // Item:: nereye yazilmasi lazim?
+ostream& operator<<(ostream &os, const Item &obj)
 {
-    for (int i{0}; i < obj.getLength(); i++)
+    for (size_t i=0; i<obj.Numberofitems; i++)
     {
-        os << obj.Item << " "; // duzeltin
+        os <<"atack"<<obj.attackPower<<endl;    //????//
     }
     cout << endl;
     return os;

@@ -9,20 +9,21 @@ protected:
     int defensePower;
     int healthIncreaser;
     int cost;
-
+    int Numberofitems;
 public:
     // default const
     // destructor
     // copy const
     // move const ????
-
+    //Getters//
     int getAttackPower() { return attackPower; };
-    void setAttackPower(int attackPower) { this->attackPower = attackPower; };
     int getdefensePower() { return defensePower; };
-    void setdefensePower(int defensePower) { this->defensePower = defensePower; };
     int gethealthIncreaser() { return healthIncreaser; };
-    void sethealthIncreaser(int healthIncreaser) { this->healthIncreaser = healthIncreaser; };
     int getcost() { return cost; };
+    //Setters//
+    void setAttackPower(int attackPower) { this->attackPower = attackPower; };
+    void setdefensePower(int defensePower) { this->defensePower = defensePower; };
+    void sethealthIncreaser(int healthIncreaser) { this->healthIncreaser = healthIncreaser; };
     void setcost(int cost) { this->cost = cost; };
 
     friend ostream &operator<<(ostream &os, const Item &obj);
