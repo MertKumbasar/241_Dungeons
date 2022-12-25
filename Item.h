@@ -2,7 +2,7 @@
 #define Item_H
 using namespace std;
 #include "Player.h"
-#include "player.cpp"
+#include "Player.cpp"
 #include <string>
 
 class Item
