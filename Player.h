@@ -21,7 +21,7 @@ class Player{
 
     public:
     //Default Constructor//
-
+        Player(): Name{"Unknown"}, Score{0}, Defense{10}, Health{100}, Attack{10}, Total_Gold{0}{}
     
     //Overloaded Constructors//
     

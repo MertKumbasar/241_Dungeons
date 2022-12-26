@@ -5,20 +5,17 @@ using namespace std;
 #include <string>
 #include <Item.h>
 
-class Enemy{
+class Enemy: public Player{
 
     protected:
-        string Name;
         int Reward_gold;
-        int Attack_Power;
-        int Health;
         //Enemy has an item that can be dropped when defeated//
         Item DroppedItem;
         
     
     public:
         //Default constructor//
-        Enemy():Name{"Unknown"},Reward_gold{0},Attack_Power{0},Health{0},DroppedItem(){}
+        Enemy():Player(), Reward_gold{0}, DroppedItem(){}
 
         //Getters//
         string GetName(void){return Name;}
@@ -44,6 +41,9 @@ class MiniBoss:public Enemy{
 
     public:
         //Default constructor//
+        MiniBoss(): Enemy(){
+            Attack=30;
+        }
 
         //Overloaded constructor//
 
