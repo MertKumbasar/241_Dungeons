@@ -36,7 +36,8 @@ class MiniBoss:public Enemy{
     public:
         //Default constructor//
         MiniBoss(): Enemy(){
-            Attack=30;
+            Attack=40;
+            Defense=40;
         }
 
         //Overloaded constructor//
@@ -53,7 +54,8 @@ class FinalBoss:public Enemy{
     public:
         //Default constructor//
         FinalBoss():Enemy(){
-            Attack=60;
+            Attack=80;
+            Defense=80;
         }
         //Overloaded constructor//
 
