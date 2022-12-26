@@ -52,7 +52,7 @@ class FinalBoss:public Enemy{
 
     public:
         //Default constructor//
-        FinalBoss():Enemy{
+        FinalBoss():Enemy(){
             Attack=60;
         }
         //Overloaded constructor//

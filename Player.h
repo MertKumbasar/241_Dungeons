@@ -32,11 +32,15 @@ class Player{
     //Destructor//
     
     //Setters//
+    void SetDefense(int input){Defense=input;};
+    void SetAttack(int input){Attack=input;};
     void Setname(string input){Name = input;}
     void SetHealth(int input){Health=input;}
     void SetScore(int input){Score=input;}
     void SetTotalGold(int input){Total_Gold=input;}
     //Getters//
+    int GetDefense(void){return Defense;};
+    int GetAttack(void){return Attack;};
     string GetName(void){return Name;}
     int GetHealth(void){return Health;}
     int GetScore(void){return Score;}
