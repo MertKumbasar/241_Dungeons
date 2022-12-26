@@ -18,18 +18,12 @@ class Enemy: public Player{
         Enemy():Player(), Reward_gold{0}, DroppedItem(){}
 
         //Getters//
-        string GetName(void){return Name;}
         int GetReward_gold(void){return Reward_gold;}
-        int GetAttack_Power(void){return Attack_Power;}
-        int GetHealth(void){return Health;}
         Item& DropItem(void){return DroppedItem;}
         //Set Item Method//
         void SetItem(Item &i){this->DroppedItem=i;}
         //Regular Setters//
-        void SetName(string x){Name=x;}
         void SetReward_gold(int x){Reward_gold=x;}
-        void SetAttack_Power(int x){Attack_Power=x;}
-        void SetHealth(int x){Health=x;}
         
         //Attack Method//
 
@@ -56,8 +50,11 @@ class MiniBoss:public Enemy{
 
 class FinalBoss:public Enemy{
 
+    public:
         //Default constructor//
-
+        FinalBoss():Enemy{
+            Attack=60;
+        }
         //Overloaded constructor//
 
         //Attack Method//
