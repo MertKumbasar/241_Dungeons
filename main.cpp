@@ -4,7 +4,7 @@
 #include "Map.h"
 #include "Map.cpp"
 #include "Player.h"
-#include "player.cpp"
+#include "Player.cpp"
 #include "Enemy.h"
 #include "Enemy.cpp"
 #include "Item.h"
