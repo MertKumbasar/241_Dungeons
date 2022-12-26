@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <Enemy.h>
 using namespace std;
 
 class Player{
@@ -42,26 +43,30 @@ class Player{
     int GetTotalGold(void){return Total_Gold;}
     //function for printing player status//
     void PrintStatus(Player &p1){
-
-    cout << "Your name is: " << p1.Name << endl;
-    cout << "Your score is: " << p1.Score << endl;
-    cout << "Your defense power is : " << p1.Defense << endl;
-    cout << "Your health is: " << p1.Health << endl;
-    cout << "Your attack power is: " <<p1.Attack << endl;
-    cout << "Your total gold is: " << p1.Total_Gold << endl;
-    cout << "Items you have are: " << endl;
-    /*for (int i{0}; i < nrOfItems; i++)
-    {
-        cout << itemsList[i];
-    }
-    */
-    }
+        cout << "Your name is: " << p1.Name << endl;
+        cout << "Your score is: " << p1.Score << endl;
+        cout << "Your defense power is : " << p1.Defense << endl;
+        cout << "Your health is: " << p1.Health << endl;
+        cout << "Your attack power is: " <<p1.Attack << endl;
+        cout << "Your total gold is: " << p1.Total_Gold << endl;
+        cout << "Items you have are: " << endl;
+        /*for (int i{0}; i < nrOfItems; i++)
+        {
+            cout << itemsList[i];
+        }
+        */
+        }
     //Move method//
 
-    //Attack method//
+    //Attack method virtual//
+    virtual Player Attack(Enemy &E){
+        
+    }
 
-    //Defend Method//
+    //Defend Method virtual//
+    virtual Player Defend (Enemy &E){
 
+    }
     
 
 };
@@ -83,7 +88,6 @@ class Mage:public Player{
         int mana;
         //Magic scrolls(???)//
 
-
 };
 
 
@@ -91,7 +95,7 @@ class Rouge:public Player{
 
     private:
         int Crit_Strike_Chance;//???//
-        
+    
 
 
 };
