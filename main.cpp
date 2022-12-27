@@ -6,6 +6,15 @@
 // gençler test yapmak için buraları sildim bi daha eklerirz sonra
 using namespace std;
 
+template <typename T > 
+
+
+int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
+
+
+
+}
+
 // function to move cursor to top
 void gotoxy(int x, int y) { 
     COORD pos = {x, y};
@@ -15,6 +24,7 @@ void gotoxy(int x, int y) {
 // function to move cursor to top
 
 int main(){
+      menuCH1 <string> (name)
 
       // variables for main
       string name;
@@ -79,6 +89,8 @@ int main(){
             else if(event == 'I'){
                   system("cls");
                   cout << "item event!!!";
+                  //Returnn to map in 3 sexx
+                  Sleep(1000);
             }
             // reseting the event variable
             event = '.';
