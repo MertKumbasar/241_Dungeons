@@ -26,6 +26,7 @@ int main(){
       cout << "Well met " << name << ". Here is the deal " << name << ", you were camping with your girlfriend in the forest but somehow you end up here and your girlfirend is missing" << endl;
       
       cout << "'ask a question' "<< endl;
+      cout << endl;
       do{
             cout << "1. Wait a minute, who are you ? "<< endl;
             cout << "2. Where is my girlfriend ? Tell me NOW !!!! " << endl;
