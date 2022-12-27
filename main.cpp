@@ -3,6 +3,10 @@
 #include <string>
 #include "Map.h"
 #include "Map.cpp"
+#include "Player.h"
+#include "Item.h"
+#include "Enemy.h"
+
 // gençler test yapmak için buraları sildim bi daha eklerirz sonra
 using namespace std;
 
