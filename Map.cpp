@@ -108,5 +108,10 @@ char Map::movePlayer_right(){
     }
     return event;
 }
+void Map::movePlayer_left_if_monster_lives(void){
+    map[dir_x_of_player][dir_y_of_player] = 'M';
+    dir_y_of_player -= 1;
+    map[dir_x_of_player][dir_y_of_player] = 'P';
+}
 
 

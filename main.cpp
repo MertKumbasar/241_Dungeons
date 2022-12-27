@@ -24,7 +24,7 @@ void gotoxy(int x, int y) {
 // function to move cursor to top
 
 int main(){
-      menuCH1 <string> (name)
+      
 
       // variables for main
       string name;
@@ -82,9 +82,12 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  TurnBaseBattle();
+                  
                   cout << "monster event !!!";
                   Sleep(1000);
+                  //if( monster lives ){
+                  //       game_map.movePlayer_left_if_monster_lives();
+                  // }
                   
             }
             else if(event == 'I'){
