@@ -4,10 +4,6 @@
 #include "Map.h"
 #include "Map.cpp"
 // gençler test yapmak için buraları sildim bi daha eklerirz sonra
-
-
-
-
 using namespace std;
 
 // function to move cursor to top
@@ -17,14 +13,20 @@ void gotoxy(int x, int y) {
     SetConsoleCursorPosition(output, pos);
 }
 // function to move cursor to top
+
 int main(){
+
+      // variables for main
       string name;
       int answer;
+      char event = '.';
+      int game_is_on = 1;
+      // variables for main
+
       cout << "The voice: Welcome stranger, what is your name ? "<< endl;
       cin >> name;
       cout << endl;
       cout << "Well met " << name << ". Here is the deal " << name << ", you were camping with your girlfriend in the forest but somehow you end up here and your girlfirend is missing" << endl;
-      
       cout << "'ask a question' "<< endl;
       cout << endl;
       do{
@@ -40,10 +42,9 @@ int main(){
                   cout << "The voice: Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
             }
       }while(answer != 3);
+
       system("cls");
 
-      char event = '.';
-      int game_is_on = 1;
       Map game_map;
       while(game_is_on){
             gotoxy(0,0);
@@ -82,7 +83,7 @@ int main(){
             }
             // reseting the event variable
             event = '.';
-   }
-   return 0;
+      }
+      return 0;
 }
 
