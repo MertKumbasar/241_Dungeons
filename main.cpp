@@ -25,6 +25,7 @@ int main(){
             gotoxy(0,0);
             game_map.printMap();
             Sleep(100);
+            
             if (_kbhit()){
                   switch (getch()){  
                   case 'w':
