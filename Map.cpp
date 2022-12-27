@@ -85,7 +85,7 @@ char Map::movePlayer_left(){
     if(map[temp_x][temp_y] != '#'){
         map[dir_x_of_player][dir_y_of_player] = '.';
         dir_y_of_player -= 1;
-        map[dir_x_of_player][dir_y_of_player] = 'P';
+        map[dir_x_of_player][dir_y_of_player] = 'q';
         
     }
     return event;

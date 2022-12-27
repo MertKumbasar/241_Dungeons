@@ -3,20 +3,45 @@
 #include <string>
 #include "Map.h"
 #include "Map.cpp"
-// gençler test yapmak için buraları sildim bi daha eklerirz sonra
 using namespace std;
-
-template <typename T > 
-
-
-int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
+// gençler test yapmak için buraları sildim bi daha eklerirz sonra
 
 
+//template <typename T > 
+// int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
 
+// }
+void printTitle(void){
+      cout << "             _ " << endl;
+      cout << "            | |" << endl;
+      cout << "          __| |_   _ _ __   __ _  ___  ___  _ __  ___ " << endl;
+      cout << "         / _` | | | | '_ \\ / _` |/ _ \\/ _ \\| '_ \\/ __|" << endl;
+      cout << "        | (_| | |_| | | | | (_| |  __/ (_) | | | \\__ \\" << endl;
+      cout << "         \\__,_|\\__,_|_| |_|\\__, |\\___|\\___/|_| |_|___/" << endl;
+      cout << "                            __/ |" << endl;
+      cout << "                           |___/" << endl;
+      cout << "   _________________________________________________________" << endl;
+      cout << " /|     -_-                                             _-  |\\" << endl;
+      cout << "/ |_-_- _                                         -_- _-   -| \\" << endl;
+      cout << "  |                            _-  _--                      |" << endl;
+      cout << "  |                            ,                            |" << endl;
+      cout << "  |      .-'````````'.        '(`        .-'```````'-.      |" << endl;
+      cout << "  |    .` |           `.      `)'      .` |           `.    |" << endl;
+      cout << "  |   /   |   ()        \\      U      /   |    ()       \\   |" << endl;
+      cout << "  |  |    |    ;         | o   T   o |    |    ;         |  |" << endl;
+      cout << "  |  |    |     ;        |  .  |  .  |    |    ;         |  |" << endl;
+      cout << "  |  |    |     ;        |   . | .   |    |    ;         |  |" << endl;
+      cout << "  |  |    |     ;        |    .|.    |    |    ;         |  |" << endl;
+      cout << "  |  |    |____;_________|     |     |    |____;_________|  |" << endl;
+      cout << "  |  |   /  __ ;   -     |     !     |   /     `'() _ -  |  |" << endl;
+      cout << "  |  |  / __  ()        -|        -  |  /  __--      -   |  |" << endl;
+      cout << "  |  | /        __-- _   |   _- _ -  | /        __--_    |  |" << endl;
+      cout << "  |__|/__________________|___________|/__________________|__|" << endl;
+      cout << " /                                             _ -           \\" << endl;
+      cout << "/   -_- _ -             _- _---                       -_-  -_ \\" << endl;
 }
-
 // function to move cursor to top
-void gotoxy(int x, int y) { 
+void gotoxy(short x, short y) { 
     COORD pos = {x, y};
     HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(output, pos);
@@ -24,14 +49,19 @@ void gotoxy(int x, int y) {
 // function to move cursor to top
 
 int main(){
-      
-
       // variables for main
       string name;
-      int answer;
+      int input;
       char event = '.';
       int game_is_on = 1;
       // variables for main
+      printTitle();
+      cout << "Press 1 to play "<<endl;
+      do{
+            cin >> input;
+      }while(input != 1);
+      system("cls");
+
 
       cout << "The voice: Welcome stranger, what is your name ? "<< endl;
       cin >> name;
@@ -43,16 +73,19 @@ int main(){
             cout << "1. Wait a minute, who are you ? "<< endl;
             cout << "2. Where is my girlfriend ? Tell me NOW !!!! " << endl;
             cout << "3. Explore the dungeon !!"<<endl;
-            cin >> answer;
+            cin >> input;
             cout << endl;
-            if(answer == 1){
+            if(input == 1){
                   cout << "The voice: It really doesn't matter who i am. I am just here to help you this is a wired place to be in you need a guide"<<endl;
             }
-            else if(answer == 2){
+            else if(input == 2){
                   cout << "The voice: Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
             }
-      }while(answer != 3);
+      }while(input != 3);
 
+      system("cls");
+      cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!";
+      Sleep(3000);
       system("cls");
 
       Map game_map;
