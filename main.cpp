@@ -3,7 +3,6 @@
 #include <string>
 #include "Map.h"
 #include "Map.cpp"
-using namespace std;
 // gençler test yapmak için buraları sildim bi daha eklerirz sonra
 
 

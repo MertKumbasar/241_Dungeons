@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include "Enemy.h"
+#include "Item.h"
 using namespace std;
 
 class Player{
@@ -29,7 +30,7 @@ class Player{
 
     //Move Constructor??//
 
-    //Destructor//
+    //Destructor// virtual
     
     //Setters//
     void SetDefense(int input){Defense=input;};
@@ -64,11 +65,23 @@ class Player{
 
     //Attack method virtual//
     virtual Player battle(Enemy &E){
+        srand((unsigned) time(NULL));
+        
         cout<<E.GetName();
         cout<<Name;
+        int RndAttack;
         //cout<<"Storyline"
-        while (E.GetHealth()>0){ //player yaşıyorsa, Enemy ölene kadar 
-            cout<<
+        while(E.GetHealth()>0){  //player yaşıyorsa, Enemy ölene kadar 
+            cout<<"Press 1 to attack";
+
+            RndAttack= 0 + (rand() % Attack);
+
+            E.health(E.GetHealth()-RndAttack);
+
+            RndAttack= 0 + (rand() % E.GetAttack());
+
+            SetHealth(GetHealth()-RndAttack);
+
 
         }
         
