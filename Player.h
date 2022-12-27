@@ -30,7 +30,7 @@ class Player{
 
     //Move Constructor??//
 
-    //Destructor//
+    //Destructor// virtual
     
     //Setters//
     void SetDefense(int input){Defense=input;};
@@ -76,7 +76,7 @@ class Player{
 
             RndAttack= 0 + (rand() % Attack);
 
-            E.SetHealth(E.GetHealth()-RndAttack);
+            E.health(E.GetHealth()-RndAttack);
 
             RndAttack= 0 + (rand() % E.GetAttack());
 
