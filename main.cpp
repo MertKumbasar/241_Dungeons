@@ -66,7 +66,6 @@ int main(){
                         event = game_map.movePlayer_right();
                         break;
                   default:
-                        
                         break;
                         
                   }
