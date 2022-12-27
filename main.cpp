@@ -34,7 +34,7 @@ int main(){
             cin >> answer;
             cout << endl;
             if(answer == 1){
-                  cout << "The voice: It really doesn't matter who i am. I am just here to help you"<<endl;
+                  cout << "The voice: It really doesn't matter who i am. I am just here to help you this is a wired place to be in you need a guide"<<endl;
             }
             else if(answer == 2){
                   cout << "The voice: Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
