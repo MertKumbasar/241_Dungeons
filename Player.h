@@ -63,14 +63,21 @@ class Player{
     //Move method//
 
     //Attack method virtual//
-    virtual Player Attack(Enemy &E){
+    virtual Player battle(Enemy &E){
+        cout<<E.GetName();
+        cout<<Name;
+        //cout<<"Storyline"
+        while (E.GetHealth()>0){ //player yaşıyorsa, Enemy ölene kadar 
+            cout<<
+
+        }
         
     }
 
     //Defend Method virtual//
-    virtual Player Defend (Enemy &E){
+    //virtual Player Defend (Enemy &E){
 
-    }
+   // }
     
 
 };

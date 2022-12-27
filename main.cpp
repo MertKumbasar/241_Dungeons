@@ -82,6 +82,7 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
+                  TurnBaseBattle();
                   cout << "monster event !!!";
                   Sleep(1000);
                   
