@@ -12,10 +12,10 @@ class Map{
         int dir_y_of_player = 2;
         Map();
         void printMap();
-        void movePlayer_up();
-        void movePlayer_down();
-        void movePlayer_right();
-        void movePlayer_left();
+        char movePlayer_up();
+        char movePlayer_down();
+        char movePlayer_right();
+        char movePlayer_left();
        
 };
 

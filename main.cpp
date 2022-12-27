@@ -3,9 +3,9 @@
 #include <string>
 #include "Map.h"
 #include "Map.cpp"
-#include "Player.h"
-#include "Enemy.h"
-#include "Item.h"
+
+
+
 
 
 using namespace std;
@@ -18,12 +18,7 @@ void gotoxy(int x, int y) {
 }
 // function to move cursor to top
 int main(){
-
-      
-
-      Player p1;
-      cout<<p1.GetHealth()<<endl;
-
+      char event = '.';
       int game_is_on = 1;
       Map game_map;
       while(game_is_on){
@@ -31,31 +26,37 @@ int main(){
             game_map.printMap();
             Sleep(100);
             if (_kbhit()){
-            switch (getch()){  
-
-            case 'w':
-                  game_map.movePlayer_up();
-                  
-                  break;
-
-            case 's':
-                  game_map.movePlayer_down();
-                  break;
-
-            case 'a':
-                  game_map.movePlayer_left();
-                  break;
-
-            case 'd':
-                  game_map.movePlayer_right();
-                  break;
-                  
-            default:
-                  break;
+                  switch (getch()){  
+                  case 'w':
+                        event = game_map.movePlayer_up();
+                        break;
+                  case 's':
+                        event = game_map.movePlayer_down();
+                        break;
+                  case 'a':
+                        event = game_map.movePlayer_left();
+                        break;
+                  case 'd':
+                        event = game_map.movePlayer_right();
+                        break;
+                  default:
+                        
+                        break;
+                        
+                  }
+            }
+            if(event == 'M'){
+                  system("cls");
+                  cout << "monster event !!!";
+                  Sleep(1000);
                   
             }
-      }
-     
+            else if(event == 'I'){
+                  system("cls");
+                  cout << "item event!!!";
+            }
+            // reseting the event variable
+            event = '.';
    }
    return 0;
 }

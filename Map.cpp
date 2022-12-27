@@ -26,6 +26,7 @@ Map::Map(){
         }    
     }
     map[dir_x_of_player][dir_y_of_player] = 'P';
+    map[2][3] = 'M';
 }
 void Map::printMap(){
     for (size_t i = 0; i < height; i++){
@@ -35,46 +36,77 @@ void Map::printMap(){
         cout << endl;   
     }
 }
-void Map::movePlayer_up(){
+char Map::movePlayer_up(){
+    char event = '.';
     int temp_x = dir_x_of_player - 1;
     int temp_y = dir_y_of_player;
-   
+    if(map[temp_x][temp_y] == 'M'){
+        event = 'M';
+    }
+    else if(map[temp_x][temp_y] == 'I'){
+        event = 'I';
+    }
     if(map[temp_x][temp_y] != '#'){
         map[dir_x_of_player][dir_y_of_player] = '.';
         dir_x_of_player -= 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
+        
     }
+    return event;
 }
-void Map::movePlayer_down(){
+char Map::movePlayer_down(){
+    char event = '.';
     int temp_x = dir_x_of_player + 1;
     int temp_y = dir_y_of_player;
-   
+    if(map[temp_x][temp_y] == 'M'){
+        event = 'M';
+    }
+    else if(map[temp_x][temp_y] == 'I'){
+        event = 'I';
+    }
     if(map[temp_x][temp_y] != '#'){
         map[dir_x_of_player][dir_y_of_player] = '.';
         dir_x_of_player += 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
+        
     }
+    return event;
 }
-void Map::movePlayer_left(){
+char Map::movePlayer_left(){
+    char event = '.';
     int temp_x = dir_x_of_player;
     int temp_y = dir_y_of_player - 1;
-   
+    if(map[temp_x][temp_y] == 'M'){
+        event = 'M';
+    }
+    else if(map[temp_x][temp_y] == 'I'){
+        event = 'I';
+    }
     if(map[temp_x][temp_y] != '#'){
         map[dir_x_of_player][dir_y_of_player] = '.';
         dir_y_of_player -= 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
+        
     }
-    
+    return event;
 }
-void Map::movePlayer_right(){
+char Map::movePlayer_right(){
+    char event = '.';
     int temp_x = dir_x_of_player;
     int temp_y = dir_y_of_player + 1;
-   
+    if(map[temp_x][temp_y] == 'M'){
+        event = 'M';
+    }
+    else if(map[temp_x][temp_y] == 'I'){
+        event = 'I';
+    }
     if(map[temp_x][temp_y] != '#'){
         map[dir_x_of_player][dir_y_of_player] = '.';
         dir_y_of_player += 1;
         map[dir_x_of_player][dir_y_of_player] = 'P';
+       
     }
+    return event;
 }
 
 
