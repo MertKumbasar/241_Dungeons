@@ -7,7 +7,7 @@ class Entity{
     protected:
         string Name;
         int Score;
-        int Defense;
+        int Defense;   
         int Health;
         int Attack;
         int Total_Gold;
@@ -34,6 +34,7 @@ class Entity{
         void SetHealth(int input){Health=input;}
         void SetScore(int input){Score=input;}
         void SetTotalGold(int input){Total_Gold=input;}
+        
     
 
 
