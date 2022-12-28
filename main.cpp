@@ -10,6 +10,8 @@
 // int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
 
 // }
+
+// function to print title
 void printTitle(void){
       cout << "             _ " << endl;
       cout << "            | |" << endl;
@@ -38,6 +40,8 @@ void printTitle(void){
       cout << "  |__|/__________________|___________|/__________________|__|" << endl;
       cout << " /                                             _ -           \\" << endl;
       cout << "/   -_- _ -             _- _---                       -_-  -_ \\" << endl;
+      system("pause");
+      system("cls");
 }
 // function to move cursor to top
 void gotoxy(short x, short y) { 
@@ -45,7 +49,7 @@ void gotoxy(short x, short y) {
     HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(output, pos);
 }
-// function to move cursor to top
+
 
 int main(){
       // variables for main
@@ -55,10 +59,7 @@ int main(){
       int game_is_on = 1;
       // variables for main
       printTitle();
-      system("pause");
-      system("cls");
-
-
+      
       cout << "The voice: Welcome stranger, what is your name ? "<< endl;
       cin >> name;
       cout << endl;
@@ -122,7 +123,7 @@ int main(){
             else if(event == 'I'){
                   system("cls");
                   cout << "item event!!!";
-                  //Returnn to map in 3 sexx
+                  //Returnn to map in 3 sec
                   Sleep(1000);
             }
             // reseting the event variable
