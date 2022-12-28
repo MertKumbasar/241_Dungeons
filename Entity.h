@@ -1,3 +1,6 @@
+#ifndef Entity_H
+#define Entity_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -34,9 +37,8 @@ class Entity{
         void SetHealth(int input){Health=input;}
         void SetScore(int input){Score=input;}
         void SetTotalGold(int input){Total_Gold=input;}
-        
+
     
-
-
-
 };
+
+#endif
