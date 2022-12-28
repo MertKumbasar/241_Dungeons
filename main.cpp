@@ -55,10 +55,7 @@ int main(){
       int game_is_on = 1;
       // variables for main
       printTitle();
-      cout << "Press 1 to play "<<endl;
-      do{
-            cin >> input;
-      }while(input != 1);
+      system("pause");
       system("cls");
 
 
