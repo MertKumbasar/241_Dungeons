@@ -53,6 +53,7 @@ void gotoxy(short x, short y) {
 
 int main(){
       // variables for main
+
       string name;
       int input;
       char event = '.';
@@ -118,6 +119,10 @@ int main(){
                   system("cls");
                   
                   cout << "monster event !!!";
+                  
+
+
+
                   Sleep(1000);
                   //if( monster lives ){
                   //       game_map.movePlayer_left_if_monster_lives();

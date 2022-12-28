@@ -57,7 +57,7 @@ class Player:public Entity{
                 Health=Health-(Defense-damage);
                 cout<<"Enemy dealt "<<damage<<". Player current Health is "<<Health<<endl;
 
-                cout<<"ENTER 1 TO CONTINUE FIGHTING,2 TO RUN!!:";
+                cout<<"ENTER 1 TO CONTINUE FIGHTING, 2 TO RUN!!:";
                 cin>>choice;
                 if(choice==1){continue;}
                 else if(choice==2){flag=2;break;}
@@ -85,6 +85,12 @@ class Player:public Entity{
 
 
 class Warior:public Player{
+    public:
+    //default constructor
+    
+
+    //overloaded constructor
+
 
     private:
         //A Furry meter which goes up when defending resulting more attack power//

@@ -13,7 +13,13 @@ class Enemy: public Entity{
     
     public:
         //constructors//
-        
+        Enemy(): Entity(), Reward_gold{0}{}
+
+        //overloaded constructor
+        Enemy(int gold): Entity(), Reward_gold{gold}{}
+
+        //destructor
+        ~Enemy(){}
 
         //Getters//
         int GetReward_gold(void){return Reward_gold;}
@@ -34,8 +40,9 @@ class FinalBoss:public Enemy{
             Attack=80;
             Defense=80;
         }
+
         //Overloaded constructor//
-        
+        //FinalBoss(string str, int healt, int gold, int attck, int def): Enemy()
 
         //Attack Method//
 
