@@ -17,7 +17,7 @@ class Entity{
         Entity():Name{"Unknown"},Score{0},Health{100},Attack{20},Defense{0},Total_Gold{0}{}
 
         //Overloaded Constructor
-        Entity()
+        Entity(string str, int attck, int healt, int def): Name{str}, Attack{attck}, Health{healt}, Defense{def} {}
 
         //Getter//
         int GetDefense(void){return Defense;};

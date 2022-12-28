@@ -49,7 +49,7 @@ class Player:public Entity{
                 break;
             }
             else{
-                damage= 1+(rand()%attack);
+                damage= 1+(rand()%Attack);
                 e.SetHealth(e.GetHealth()-damage);
                 cout<<"Player dealt "<<damage<<". Enemy current Health is "<<e.GetHealth()<<endl;
                 
