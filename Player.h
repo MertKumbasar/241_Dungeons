@@ -5,16 +5,15 @@
 #include <iostream>
 #include <string>
 #include "Entity.h"
+#include "Enemy.h"
 #include "Item.h"
 using namespace std;
 
 class Player:public Entity{
 
-    protected:  
-
-
     public:
     //Default Constructor//
+    Player(): Entity(){};
     
     //Overloaded Constructors//
     
@@ -41,8 +40,39 @@ class Player:public Entity{
     //Move method//
 
     //Attack method virtual//
-    virtual Player battle(Enemy &E){
-       
+    virtual Player battle(Enemy &e){
+       srand(time(NULL));
+        int damage,flag=0,choice;
+        while(e.GetHealth()>0){
+            if(Health<=0){
+                flag=1;
+                break;
+            }
+            else{
+                damage= 1+(rand()%attack);
+                e.SetHealth(e.GetHealth()-damage);
+                cout<<"Player dealt "<<damage<<". Enemy current Health is "<<e.GetHealth()<<endl;
+                
+                damage= 1+(rand()%e.GetAttack());
+                Health=Health-(Defense-damage);
+                cout<<"Enemy dealt "<<damage<<". Player current Health is "<<Health<<endl;
+
+                cout<<"ENTER 1 TO CONTINUE FIGHTING,2 TO RUN!!:";
+                cin>>choice;
+                if(choice==1){continue;}
+                else if(choice==2){flag=2;break;}
+            }
+        }
+        if(flag==1){
+            cout<<"You are dead!!"<<endl;
+        }
+    
+        else if(flag==0){
+             cout<<"Enemy is dead!!"<<endl;
+        }
+        else if(flag==2) {
+            cout<<"You ran away. COWARD!!!"<<endl;
+        }
         
     }
 

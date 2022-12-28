@@ -46,6 +46,7 @@ public:
     //Player virtual NegateItem(Player &Player);
 
     friend ostream &operator<<(ostream &os, const Item &obj);
+    
     //copy asignment operator//
     virtual Item& operator=(const Item &s){
         if(this==&s){
@@ -86,9 +87,10 @@ class MagicScroll:public Item{
     MagicScroll():Item(),NumberofUsesLeft{3}{}
     
     //Get//
+    int getNumberofUsesLeft(){return NumberofUsesLeft;};
 
     //Set//
-    
+    void setNumberofUsesLeft(int NumberofUsesLeft){this->NumberofUsesLeft = NumberofUsesLeft;};
 
 };
 

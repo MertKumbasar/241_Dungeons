@@ -35,6 +35,7 @@ class FinalBoss:public Enemy{
             Defense=80;
         }
         //Overloaded constructor//
+        
 
         //Attack Method//
 
