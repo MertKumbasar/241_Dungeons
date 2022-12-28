@@ -113,5 +113,16 @@ void Map::movePlayer_left_if_monster_lives(void){
     dir_y_of_player -= 1;
     map[dir_x_of_player][dir_y_of_player] = 'P';
 }
+void Map::pauseMenu(void){
+    system("cls");
+    cout << "USE W TO GO UP"<<endl;
+    cout << "USE D TO GO DOWN"<<endl;
+    cout << "USE D TO GO RİGHT"<<endl;
+    cout << "USE A TO GO LEFT"<<endl;
+    cout << "---- MAP LEGEND ------"<<endl;
+    cout << "P is PLAYER"<<endl;
+    cout << "M is MONSTER"<<endl;
+    
+}
 
 

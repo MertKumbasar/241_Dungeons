@@ -17,6 +17,7 @@ class Map{
         char movePlayer_right();
         char movePlayer_left();
         void movePlayer_left_if_monster_lives();
+        void pauseMenu();
 };
 
 #endif 
