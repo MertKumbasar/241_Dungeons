@@ -28,6 +28,7 @@ class Entity{
     void SetHealth(int input){Health=input;}
     void SetScore(int input){Score=input;}
     void SetTotalGold(int input){Total_Gold=input;}
+    
 
 
 

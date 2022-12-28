@@ -1,53 +1,30 @@
 #ifndef Enemy_H
 #define Enemy_H
-#include "Player.h"
+#include "Entity.h"
 using namespace std;
 #include <string>
-#include "Item.h"
 
-class Enemy: public Player{
+
+class Enemy: public Entity{
 
     protected:
         int Reward_gold;
-        //Enemy has an item that can be dropped when defeated//
-        Item DroppedItem;
         
     
     public:
-        //Default constructor//
-        Enemy():Player(), Reward_gold{0}, DroppedItem(){}
+        //constructors//
+        
 
         //Getters//
         int GetReward_gold(void){return Reward_gold;}
-        Item& DropItem(void){return DroppedItem;}
-        //Set Item Method//
-        void SetItem(Item &i){this->DroppedItem=i;}
-        //Regular Setters//
+        
+        //Setters//
         void SetReward_gold(int x){Reward_gold=x;}
         
-        //Attack Method//
-
-        //Defend Method//
 
 };
 
-class MiniBoss:public Enemy{
 
-    public:
-        //Default constructor//
-        MiniBoss(): Enemy(){
-            Attack=40;
-            Defense=40;
-        }
-
-        //Overloaded constructor//
-
-        //Attack Method//
-
-        //Defend Method//
-    
-
-};
 
 class FinalBoss:public Enemy{
 
