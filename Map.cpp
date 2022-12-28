@@ -117,7 +117,7 @@ void Map::pauseMenu(void){
     system("cls");
     cout << "USE W TO GO UP"<<endl;
     cout << "USE D TO GO DOWN"<<endl;
-    cout << "USE D TO GO RİGHT"<<endl;
+    cout << "USE D TO GO RIGHT"<<endl;
     cout << "USE A TO GO LEFT"<<endl;
     cout << "---- MAP LEGEND ------"<<endl;
     cout << "P is PLAYER"<<endl;

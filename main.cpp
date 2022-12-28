@@ -106,7 +106,7 @@ int main(){
                   case 'd':
                         event = game_map.movePlayer_right();
                         break;
-                  case 'm':
+                  case 27:
                         game_map.pauseMenu();
                         system("pause");
                         system("cls");      
