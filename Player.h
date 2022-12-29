@@ -41,46 +41,73 @@ class Player:public Entity{
 
     //Attack method virtual//
     virtual Player battle(Enemy &e){
-       srand(time(NULL));
-        int damage,flag=0,choice;
-        while(e.GetHealth()>0){
-            if(Health<=0){
-                flag=1;
-                break;
-            }
-            else{
-                damage= 1+(rand()%Attack);
-                e.SetHealth(e.GetHealth()-damage);
-                cout<<"Player dealt "<<damage<<". Enemy current Health is "<<e.GetHealth()<<endl;
-                
-                damage= 1+(rand()%e.GetAttack());
-                Health=Health-(Defense-damage);
-                cout<<"Enemy dealt "<<damage<<". Player current Health is "<<Health<<endl;
+        srand(time(NULL));
+        int damage, flag = 0, choice;
+        string Escape;
 
-                cout<<"ENTER 1 TO CONTINUE FIGHTING, 2 TO RUN!!:";
-                cin>>choice;
-                if(choice==1){continue;}
-                else if(choice==2){flag=2;break;}
+        // Display available attack options for the player
+        cout << "Choose your attack:" << endl;
+        cout << "1. Basic Attack" << endl;
+        cout << "2. Special Attack" << endl;                //speacil attack bizim heroya bağlı olabilir böylece 
+        cout << "3. Defend" << endl;
+        cin >> choice;
+
+        while (e.GetHealth() > 0 && Health > 0) {
+
+
+            if (choice == 1) {   // Basic attack
+            
+            damage = 1 + (rand() % Attack);
+            e.SetHealth(e.GetHealth() - damage);
+            cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
+
+
+            } 
+            else if (choice == 2) {      // Special attack                
+            
+            damage = 2 + (rand() % (Attack + 5));                         //item a bağlı bir artış burada olabilir ya da speller, player type a göre 
+            e.SetHealth(e.GetHealth() - damage);
+            cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl;
+            } 
+            
+            else if (choice == 3) {         // Defend
+            
+            Defense += 2;                                                              //burdan pek enim değilim defend için daha mantıklı bir şey olabilir defense random değişebilir gibi 
+            cout << "Player defended and increased Defense by 2." << endl;
             }
+
+            // Enemy turn
+            if (e.GetHealth() > 0) {
+            damage = 1 + (rand() % e.GetAttack());
+            Defense = 1 + (rand() % e.GetDefense());
+            Health = Health - (Defense - damage);
+            cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
+            }
+
+            if(Health<30&&e.GetHealth()>30){
+                cout<<"Your Healt is: "<<Health<<endl<<"Enemy's health  is: "<<e.GetHealth()<<endl;
+                cout<<"Would you like to RUN AWAY!??"<<endl;
+                cout<<"Yes or NO (DO NO TRY TO RUN!):"<<endl; 
+                cin>>Escape;
+                if (Escape=="Yes"||Escape=="YES"||Escape=="yes"||Escape=="YEAH BRO"){
+                    cout<<"COWARD !-! "<<endl;
+                    cout<<""
+                }
+            }
+
+
         }
-        if(flag==1){
-            cout<<"You are dead!!"<<endl;
+
+        // Determine the outcome of the battle
+        if (Health <= 0) {
+            cout << "You are dead!!" << endl;
+        } 
+
+        else if (e.GetHealth() <= 0) {
+            cout << "Enemy is dead!!" << endl;
         }
-    
-        else if(flag==0){
-             cout<<"Enemy is dead!!"<<endl;
-        }
-        else if(flag==2) {
-            cout<<"You ran away. COWARD!!!"<<endl;
-        }
-        
     }
-
-    
-    
-
-   
-
+    }
 };
 
 
