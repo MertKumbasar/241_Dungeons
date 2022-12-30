@@ -17,10 +17,11 @@ public:
     Player() : Entity(){};
 
     // Overloaded Constructors//
-
+    Player(string n, int h, int a, int d) : Entity(n, h, a, d) {}
     // Copy constructor//
 
     // Destructor//
+    ~Player() {}
 
     // function for printing player status//
     void PrintStatus(Player &p1)
@@ -54,7 +55,7 @@ public:
     }
 
     // Attack method virtual//
-    virtual Player battle(Enemy &e)
+    virtual void battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice;
@@ -102,15 +103,14 @@ public:
 
             if (Health < 30 && e.GetHealth() > 30)
             {
-                cout << "Your Healt is: " << Health << endl
+                cout << "Your Health is: " << Health << endl
                      << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;
                 cin >> Escape;
                 if (Escape == "Yes" || Escape == "YES" || Escape == "yes" || Escape == "YEAH BRO")
                 {
-                    cout << "COWARD !-! " << endl;
-                    cout << "";
+                    cout << "COWARD !! " << endl;
                 }
             }
         }

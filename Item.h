@@ -19,8 +19,8 @@ public:
     Item() : attackPower{0}, defensePower{0}, cost{0}, Name{"Uknown"}, NumberofUsesLeft{5} {}
 
     // Overloaded Constructors//
-    Item(int x, int y, int z, int k, int a) : attackPower{x}, defensePower{y}, cost{k}, NumberofUsesLeft{a} {}
-    Item(int x, int y, int c) : attackPower{x}, defensePower{y}, cost{c} {}
+    Item(int a, int d, int c, int n) : attackPower{a}, defensePower{d}, cost{c}, NumberofUsesLeft{n} {}
+    // Item(int a, int d, int c) : attackPower{a}, defensePower{d}, cost{c} {}
     Item(int a, int d, int n) : attackPower{a}, defensePower{d}, NumberofUsesLeft{n} {}
 
     // destructor
