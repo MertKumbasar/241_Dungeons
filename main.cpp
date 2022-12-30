@@ -3,7 +3,10 @@
 #include <string>
 #include "Map.h"
 #include "Map.cpp"
-// gençler test yapmak için buraları sildim bi daha eklerirz sonra
+#include "Player.h"
+#include "Enemy.h"
+#include "Item.h"
+
 
 
 //template <typename T > 
@@ -53,7 +56,7 @@ void gotoxy(short x, short y) {
 
 int main(){
       // variables for main
-
+      
       string name;
       int input;
       char event = '.';
@@ -117,17 +120,11 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  
-                  cout << "monster event !!!";
-                  
-
-
-
                   Sleep(1000);
+
                   //if( monster lives ){
                   //       game_map.movePlayer_left_if_monster_lives();
-                  // }
-                  
+                  // }      
             }
             else if(event == 'I'){
                   system("cls");
@@ -135,6 +132,7 @@ int main(){
                   //Returnn to map in 3 sec
                   Sleep(1000);
             }
+
             // reseting the event variable
             event = '.';
       }
