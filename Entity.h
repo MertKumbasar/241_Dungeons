@@ -18,7 +18,7 @@ protected:
 
 public:
     // Default Constructor//
-    Entity() : Name{"Unknown"}, Score{0}, Health{100}, Attack{20}, Defense{0}, Total_Gold{0} {}
+    Entity() : Name{"Unknown"}, Score{0}, Health{100}, Attack{20}, Defense{20}, Total_Gold{0} {}
 
     // Overloaded Constructor
     Entity(string str, int healt, int attck, int def) : Name{str}, Health{healt}, Attack{attck}, Defense{def} {}

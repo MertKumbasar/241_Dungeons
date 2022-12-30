@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <time.h>
 #include "Entity.h"
 #include "Enemy.h"
 #include "Item.h"
@@ -160,15 +162,15 @@ public:
         string Escape;
 
         // Display available attack options for the player
-        cout << "Choose your attack:" << endl;
-        cout << "1. Basic Attack" << endl;
-        cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
-        cout << "3. Defend" << endl;
-        cin >> choice;
+        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
-
+            cout << "Choose your attack:" << endl;
+            cout << "1. Basic Attack" << endl;
+            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "3. Defend" << endl;
+            cin >> choice;
             if (choice == 1)
             { // Basic attack
 
@@ -195,12 +197,19 @@ public:
             if (e.GetHealth() > 0)
             {
                 damage = 1 + (rand() % e.GetAttack());
+                cout << "burda !!! bef" << endl;;
                 furymeter(damage);
-                if (choice == 3)
+                cout << "burda !!! after" << endl;
+                if (choice == 3){
+                    
                     Defense = 5 + (rand() % e.GetDefense());
-                else
-                    Defense = 1 + (rand() % e.GetDefense());
-
+                }    
+                else{
+                    cout << "burda !!! after" << endl;
+                    Defense = 1 + (rand() % (e.GetDefense()));
+                    
+                }
+                  
                 Health = Health - (Defense - damage);
                 cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
             }

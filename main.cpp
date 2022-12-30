@@ -62,6 +62,12 @@ int main(){
       char event = '.';
       int game_is_on = 1;
       // variables for main
+
+      // objects for main
+      Warrior w1;
+      Enemy e1;
+
+
       printTitle();
       
       cout << "The voice: Welcome stranger, what is your name ? "<< endl;
@@ -86,7 +92,7 @@ int main(){
 
       system("cls");
       cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!";
-      Sleep(3000);
+      
       system("cls");
 
       Map game_map;
@@ -120,10 +126,9 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  Sleep(1000);
-
+                  w1.battle(e1);
                   //if( monster lives ){
-                  //       game_map.movePlayer_left_if_monster_lives();
+                  //      game_map.movePlayer_left_if_monster_lives();
                   // }      
             }
             else if(event == 'I'){
