@@ -130,6 +130,10 @@ public:
 
 class Warrior : public Player
 {
+
+private:
+    int furryMeter;
+
 public:
     Warrior()
     {
@@ -152,9 +156,6 @@ public:
         cout << name << " unleashes their furry, increasing their attack power by " << furryMeter << "!" << endl;
         furryMeter = 0;
     }
-
-private:
-    int furryMeter;
 };
 
 class Mage : public Player
@@ -185,16 +186,13 @@ public:
         mana += amount;
         cout << Name << " replenishes " << amount << " mana." << endl;
     }
-
-    // method to get attack power of MagicScroll
-    int getAttackPowerOfMagicScroll(MagicScroll &magicScroll)
-    {
-        return magicScroll.getAttackPower();
-    }
 };
 
 class Rogue : public Player
 {
+
+private:
+    int Crit_Strike_Chance; // Chance for the rogue to perform a critical strike
 public:
     // Default constructor
     Rogue()
@@ -203,10 +201,7 @@ public:
     }
 
     // Overloaded constructor
-    Rogue(string name, int health, int attackPower, int defense, int critChance) : Player(name, health, attackPower, defense)
-    {
-        Crit_Strike_Chance = critChance;
-    }
+    Rogue(string name, int health, int attackPower, int defense, int critChance) : Player(name, health, attackPower, defense), Crit_Strike_Chance{critChance} {}
 
     // Method to attack an enemy with a chance to perform a critical strike
     void attack(Enemy &enemy)
@@ -232,9 +227,6 @@ public:
         Crit_Strike_Chance += amount;
         cout << name << " improves their critical strike chance by " << amount << "%." << endl;
     }
-
-private:
-    int Crit_Strike_Chance; // Chance for the rogue to perform a critical strike
 };
 
 #endif
