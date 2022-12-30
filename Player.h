@@ -237,6 +237,7 @@ class Mage : public Player
 {
 
 private:
+    MagicScroll scroll;
     int mana;
 
 public:
@@ -290,7 +291,7 @@ public:
             { // casspell
 
                 if (castSpell())
-                    damage = MagicScroll.getAttackPower();
+                    damage = scroll.getAttackPower();
                 else
                     damage = 0;
 
