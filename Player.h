@@ -17,11 +17,13 @@ class Player:public Entity{
     
     //Overloaded Constructors//
     
+
     //Copy constructor//
 
 
     //Destructor// 
-    
+    ~Player(){}
+
     //function for printing player status//
     void PrintStatus(Player &p1){
         cout << "Your name is: " << p1.Name << endl;
@@ -90,8 +92,7 @@ class Player:public Entity{
                 cout<<"Yes or NO (DO NO TRY TO RUN!):"<<endl; 
                 cin>>Escape;
                 if (Escape=="Yes"||Escape=="YES"||Escape=="yes"||Escape=="YEAH BRO"){
-                    cout<<"COWARD !-! "<<endl;
-                    cout<<""
+                    cout<<"COWARD !! "<<endl;
                 }
             }
 
@@ -107,7 +108,7 @@ class Player:public Entity{
             cout << "Enemy is dead!!" << endl;
         }
     }
-    }
+    
 };
 
 
