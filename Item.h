@@ -6,105 +6,125 @@ using namespace std;
 
 class Item
 {
+
 protected:
     int attackPower;
     int defensePower;
-    int healthBonus;
     int cost;
     string Name;
+    int NumberofUsesLeft;
+
 public:
     // default const //
-    Item():attackPower{0},defensePower{0},healthBonus{0},cost{0},Name{"Uknown"}{}
-    //Overloaded Constructor//
-    Item(int x,int y,int z,int k):attackPower{x},defensePower{y},healthBonus{z},cost{k}{}
-    Item(int x,int y,int c):attackPower{x},defensePower{y},healthBonus{0},cost{c}{}
+    Item() : attackPower{0}, defensePower{0}, cost{0}, Name{"Uknown"}, NumberofUsesLeft{5} {}
+
+    // Overloaded Constructors//
+    Item(int x, int y, int z, int k, int a) : attackPower{x}, defensePower{y}, cost{k}, NumberofUsesLeft{a} {}
+    Item(int x, int y, int c) : attackPower{x}, defensePower{y}, cost{c} {}
 
     // destructor
-    ~Item(){}
+    ~Item() {}
     // copy constructor//
-    Item(const Item &obj):attackPower{obj.attackPower},defensePower{obj.defensePower},healthBonus{obj.healthBonus},cost{obj.cost}{} 
+    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}, cost{obj.cost} {}
     // move const ????
 
-    //Getters//
+    // Getters//
     int getAttackPower() { return attackPower; };
     int getdefensePower() { return defensePower; };
-    int gethealthBonus() { return healthBonus; };
     int getcost() { return cost; };
-    //Setters//
+    int getNumberofUsesLeft() { return NumberofUsesLeft; };
+
+    // Setters//
     void setAttackPower(int attackPower) { this->attackPower = attackPower; };
     void setdefensePower(int defensePower) { this->defensePower = defensePower; };
-    void sethealthBonus(int healthBonus) { this->healthBonus = healthBonus; };
     void setcost(int cost) { this->cost = cost; };
+    void setNumberofUsesLeft(int NumberofUsesLeft) { this->NumberofUsesLeft = NumberofUsesLeft; };
 
-    void virtual PrintItemStatus(void);
-    //Method for Applying Item Bonuses to Player//
+    void virtual PrintItemStatus(void)
+    {
+        cout << "Item's status: " << endl;
+        cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
+        cout << endl;
+    }
+    // Method for Applying Item Bonuses to Player//
 
-    //Player virtual UseItem(Player &Player);
+    // Player virtual UseItem(Player &Player);
 
-    //Method for Negating Item Bonuses from Player//
-    
-    //Player virtual NegateItem(Player &Player);
+    // Method for Negating Item Bonuses from Player//
 
-    friend ostream &operator<<(ostream &os, const Item &obj);
-    
-    //copy asignment operator//
-    virtual Item& operator=(const Item &s){
-        if(this==&s){
+    // Player virtual NegateItem(Player &Player);
+
+    friend ostream &operator<<(ostream &os, Item &obj)
+    {
+        obj.PrintItemStatus();
+        return os;
+    }
+
+    // copy asignment operator//
+    virtual Item &operator=(const Item &s)
+    {
+        if (this == &s)
+        {
             return *this;
         }
-        else{
-            this->attackPower=s.attackPower;
-            this->defensePower=s.defensePower;
-            this->cost=s.cost;
-            this->healthBonus=s.healthBonus;
-            this->Name=s.Name;
-
-
+        else
+        {
+            this->attackPower = s.attackPower;
+            this->defensePower = s.defensePower;
+            this->cost = s.cost;
+            this->Name = s.Name;
+            this->NumberofUsesLeft = s.NumberofUsesLeft;
         }
     }
 };
 
+class MeleeWepon : public Item
+{
 
-class MeleeWepon:public Item{
-    private:
-    int NumberofUsesLeft;
-    public:
-    //Default Constructor//
-    MeleeWepon():Item(),NumberofUsesLeft{5}{}
-    //Overloaded Constructor//
-    MeleeWepon(int x,int y,int c,string n):Item(x,y,c),NumberofUsesLeft{5}{}
-
-
-
+public:
+    // Default Constructor//
+    MeleeWepon() : Item() {}
+    // Overloaded Constructor//
+    MeleeWepon(int x, int y, int c) : Item(x, y, c) {}
 };
 
+class MagicScroll : public Item
+{
 
-class MagicScroll:public Item{
+private:
+    int ManaCost;
 
-    private:
-    int NumberofUsesLeft;
-    //Default Constructor//
-    MagicScroll():Item(),NumberofUsesLeft{3}{}
-    
-    //Get//
-    int getNumberofUsesLeft(){return NumberofUsesLeft;};
+public:
+    // Default Constructor//
+    MagicScroll() : Item(), ManaCost{0} {}
 
-    //Set//
-    void setNumberofUsesLeft(int NumberofUsesLeft){this->NumberofUsesLeft = NumberofUsesLeft;};
+    //Overloaded Constructor
 
+    // getter
+    int getManaCost() { return ManaCost; };
+    // setter
+    void setManaCost(int manaCost) { ManaCost = manaCost; };
 };
 
-class Potion:public Item{
+class Potion : public Item
+{
 
-    private:
-    int NumberofUsesLeft;
+private:
+    int healthBonus;
 
-    //Default Constructor//
-    Potion():Item(),NumberofUsesLeft{2}{}
+public:
+    // Default Constructor//
+    Potion() : Item(), healthBonus{25}
+    {
+        NumberofUsesLeft = 2;
+    }
 
+    // Getter
+    int gethealthBonus() { return healthBonus; };
+    // Setter
+    void sethealthBonus(int healthBonus) { this->healthBonus = healthBonus; };
 
-
+    //
 };
-
 
 #endif
