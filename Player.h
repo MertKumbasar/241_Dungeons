@@ -9,6 +9,7 @@
 #include "Entity.h"
 #include "Enemy.h"
 #include "Item.h"
+#include <cmath>
 using namespace std;
 
 class Player : public Entity
@@ -197,20 +198,18 @@ public:
             if (e.GetHealth() > 0)
             {
                 damage = 1 + (rand() % e.GetAttack());
-                cout << "burda !!! bef" << endl;;
                 furymeter(damage);
-                cout << "burda !!! after" << endl;
                 if (choice == 3){
                     
                     Defense = 5 + (rand() % e.GetDefense());
                 }    
                 else{
-                    cout << "burda !!! after" << endl;
+                    
                     Defense = 1 + (rand() % (e.GetDefense()));
                     
                 }
                   
-                Health = Health - (Defense - damage);
+                Health = Health - abs((Defense - damage));
                 cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
             }
 
