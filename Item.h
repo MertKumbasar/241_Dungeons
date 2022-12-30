@@ -21,6 +21,7 @@ public:
     // Overloaded Constructors//
     Item(int x, int y, int z, int k, int a) : attackPower{x}, defensePower{y}, cost{k}, NumberofUsesLeft{a} {}
     Item(int x, int y, int c) : attackPower{x}, defensePower{y}, cost{c} {}
+    Item(int a, int d, int n) : attackPower{a}, defensePower{d}, NumberofUsesLeft{n} {}
 
     // destructor
     ~Item() {}
@@ -46,13 +47,8 @@ public:
         cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
         cout << endl;
     }
-    // Method for Applying Item Bonuses to Player//
 
-    // Player virtual UseItem(Player &Player);
-
-    // Method for Negating Item Bonuses from Player//
-
-    // Player virtual NegateItem(Player &Player);
+    
 
     friend ostream &operator<<(ostream &os, Item &obj)
     {
@@ -98,7 +94,8 @@ public:
     // Default Constructor//
     MagicScroll() : Item(), ManaCost{0} {}
 
-    //Overloaded Constructor
+    // Overloaded Constructor
+    MagicScroll(int a, int d, int n, int p) : Item(a, d, n), ManaCost{p} {}
 
     // getter
     int getManaCost() { return ManaCost; };
