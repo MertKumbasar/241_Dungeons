@@ -40,6 +40,19 @@ public:
     }
     // Move method//
 
+    // method to use MeleeWepon for attack and defense
+    void UseItem(MeleeWepon &meleeWepon)
+    {
+        this->Attack += meleeWepon.getAttackPower();
+        this->Defense += meleeWepon.getdefensePower();
+    }
+
+    // method to use Potion for health
+    void UsePotion(Potion &potion)
+    {
+        this->Health += potion.gethealthBonus();
+    }
+
     // Attack method virtual//
     virtual Player battle(Enemy &e)
     {
@@ -146,6 +159,10 @@ private:
 
 class Mage : public Player
 {
+
+private:
+    int mana;
+
 public:
     Mage() : mana{100}
     {
@@ -169,8 +186,11 @@ public:
         cout << Name << " replenishes " << amount << " mana." << endl;
     }
 
-private:
-    int mana;
+    // method to get attack power of MagicScroll
+    int getAttackPowerOfMagicScroll(MagicScroll &magicScroll)
+    {
+        return magicScroll.getAttackPower();
+    }
 };
 
 class Rogue : public Player

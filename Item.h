@@ -48,8 +48,6 @@ public:
         cout << endl;
     }
 
-    
-
     friend ostream &operator<<(ostream &os, Item &obj)
     {
         obj.PrintItemStatus();
