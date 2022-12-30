@@ -355,29 +355,42 @@ public:
         Crit_Strike_Chance += amount;
         cout << name << " improves their critical strike chance  " << amount / 10 << endl;
     }
+    virtual void battle(Enemy &e)
+    {
+        srand(time(NULL));
+        int damage, flag = 0, choice,rnd;
+        string Escape;
+
+        // Display available attack options for the player
+        cout << "Choose your attack:" << endl;
+        cout << "1. Basic Attack (Chance of critic attack: %10)" << endl
+        cout << "2. Defend" << endl;
+        cin >> choice;
+
 
     while (e.GetHealth() > 0 && Health > 0)
     {
 
         if (choice == 1)
         { // Basic attack
-
-            damage = 1 + (rand() % Attack);
+            rnd=1 + (rand() % 11)
+            
+            if(rnd==7){
+                damage = Crit_Strike_Chance + (rand() % Attack);
+                cout<<"You did crit? aferin"<<endl;
+            }
+                
+            else{
+                damage = 1 + (rand() % Attack);
+            }
             e.SetHealth(e.GetHealth() - damage);
-            cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
-
             improveCritChance(damage / 10);
+            cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
+            
         }
+  
+
         else if (choice == 2)
-        {
-
-            damage = Crit_Strike_Chance + (rand() % Attack);
-            e.SetHealth(e.GetHealth() - damage);
-
-            cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl;
-        }
-
-        else if (choice == 3)
         {
 
             e.SetHealth(e.GetHealth() - 1);
