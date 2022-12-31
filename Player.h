@@ -172,12 +172,14 @@ public:
             cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
             cout << "3. Defend" << endl;
             cin >> choice;
+            //ARKADAŞLAR BUNU BURAYA EKLEDİM GÖRÜNTÜ GÜZEL OLSUN DİYE DİĞER CLASSLARDA YAPMADIM Bİ BAKIN SONRA DENERİZ!!
+            system("cls");
             if (choice == 1)
             { // Basic attack
 
                 damage = 1 + (rand() % Attack);
                 e.SetHealth(e.GetHealth() - damage);
-                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
+                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl << endl;
             }
             else if (choice == 2)
             { // unleash fury
@@ -185,13 +187,13 @@ public:
                 damage = 1 + (rand() % (Attack));
                 damage *= unleashFurry();
                 e.SetHealth(e.GetHealth() - damage);
-                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl;
+                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl << endl;
             }
 
             else if (choice == 3)
             {
 
-                cout << "Player defended and your defense is increased" << endl; // item gücü kadar defense artabilir şimdilik böyle kalsın elleme???
+                cout << "Player defended and your defense is increased" << endl << endl; // item gücü kadar defense artabilir şimdilik böyle kalsın elleme???
             }
 
             // Enemy turn
@@ -210,7 +212,7 @@ public:
                 }
                   
                 Health = Health - abs((Defense - damage));
-                cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
+                cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl << endl;
             }
 
             if (Health < 30 && e.GetHealth() > 30)
@@ -226,6 +228,7 @@ public:
                     cout << "";
                 }
             }
+
         }
 
         // Determine the outcome of the battle

@@ -46,30 +46,11 @@ void printTitle(void){
       system("pause");
       system("cls");
 }
-// function to move cursor to top
-void gotoxy(short x, short y) { 
-    COORD pos = {x, y};
-    HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(output, pos);
-}
 
 
-int main(){
-      // variables for main
-      
-      string name;
+string firstChapter(){
       int input;
-      char event = '.';
-      int game_is_on = 1;
-      // variables for main
-
-      // objects for main
-      Warrior w1;
-      Enemy e1;
-
-
-      printTitle();
-      
+      string name;
       cout << "The voice: Welcome stranger, what is your name ? "<< endl;
       cin >> name;
       cout << endl;
@@ -89,10 +70,38 @@ int main(){
                   cout << "The voice: Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
             }
       }while(input != 3);
+      return name;
+}
+
+
+// function to move cursor to top
+void gotoxy(short x, short y) { 
+    COORD pos = {x, y};
+    HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorPosition(output, pos);
+}
+
+
+int main(){
+      // variables for main
+      string name;
+      int input;
+      char event = '.';
+      int game_is_on = 1;
+      // variables for main
+
+      // objects for main
+      Warrior w1;
+      Enemy e1;
+      // objects for main
+
+      printTitle();
+      name = firstChapter();
+      
 
       system("cls");
-      cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!";
-      
+      cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!" << endl;
+      system("pause");
       system("cls");
 
       Map game_map;
@@ -127,9 +136,11 @@ int main(){
             if(event == 'M'){
                   system("cls");
                   w1.battle(e1);
+                  system("cls");
                   //if( monster lives ){
                   //      game_map.movePlayer_left_if_monster_lives();
-                  // }      
+                  // }
+                  system("cls");      
             }
             else if(event == 'I'){
                   system("cls");
