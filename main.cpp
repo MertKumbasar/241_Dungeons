@@ -136,7 +136,7 @@ int main(){
             cout << "You choosed rogue" << endl << endl;
             player = new Rogue;
       }
-      
+      player->Setname(name);
       cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!" << endl;
       system("pause");
       system("cls");
