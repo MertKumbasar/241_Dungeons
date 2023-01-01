@@ -72,6 +72,30 @@ string firstChapter(){
       }while(input != 3);
       return name;
 }
+string chooseCharacter(){
+      system("cls");
+      int input;
+      cout << "The voice: Wait before you go i need to bless my powers to you down there is too dangerous." << endl;
+      cout << "The voice: You have 3 options: Warrior,Mage and Rogue each have their unique powers choose wisely." << endl;
+      cout << "Press 1 to choose warrior" << endl;
+      cout << "Press 2 to choose mage" << endl; 
+      cout << "Press 3 to choose rogue" << endl;
+      do{
+            cin >> input;
+            if(input == 1){
+                  return "warrior";
+            }
+            else if(input == 2){
+                  return "mage";
+            }
+            else if(input == 3){
+                  return "rouge";
+            }
+            else{
+                  cout << "enter a vaild input" << endl;
+            }
+      }while(1);
+}
 
 
 // function to move cursor to top
@@ -84,27 +108,39 @@ void gotoxy(short x, short y) {
 
 int main(){
       // variables for main
-      string name;
+      string name,player_type;
       int input;
       char event = '.';
       int game_is_on = 1;
       // variables for main
 
       // objects for main
-      Warrior w1;
+      Map game_map;
+      Player *player;
       Enemy e1;
       // objects for main
 
       printTitle();
       name = firstChapter();
-      
+      player_type = chooseCharacter();
 
-      system("cls");
+      if(player_type == "warrior"){
+            cout << "You choosed warrior" << endl << endl;
+            player = new Warrior;
+      }
+      else if(player_type == "mage"){
+            cout << "You choosed mage" << endl << endl;
+            player = new Mage;
+      }
+      else{
+            cout << "You choosed rogue" << endl << endl;
+            player = new Rogue;
+      }
+      
       cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!" << endl;
       system("pause");
       system("cls");
-
-      Map game_map;
+      
       while(game_is_on){
             gotoxy(0,0);
             game_map.printMap();
@@ -135,7 +171,7 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  w1.battle(e1);
+                  player->battle(e1);
                   system("cls");
                   //if( monster lives ){
                   //      game_map.movePlayer_left_if_monster_lives();
