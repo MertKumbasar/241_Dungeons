@@ -215,9 +215,21 @@ public:
                     Defense = 1 + (rand() % (e.GetDefense()));
                     
                 }
-                  
-                Health = Health - abs((Defense - damage));
-                cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl << endl;
+                    if (Defense<damage){
+                       
+                        Healt=damage-Defense;
+                        cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl << endl;
+                        
+                    }
+                    else{
+                         cout<<"Blocked!!"<<endl:    
+                         cout << "Enemy dealt: " << damage << " damage. Player blocked " << damage << " damage. Player's current Health is: " << Health << endl << endl;
+                         
+                    }
+                       
+    
+             
+                
             }
 
             if (Health < 30 && e.GetHealth() > 30)
