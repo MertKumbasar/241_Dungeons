@@ -49,27 +49,34 @@ void printTitle(void){
 
 
 string firstChapter(){
-      int input;
       string name;
-      cout << "The voice: Welcome stranger, what is your name ? "<< endl;
-      cin >> name;
-      cout << endl;
-      cout << "Well met " << name << ". Here is the deal " << name << ", you were camping with your girlfriend in the forest but somehow you end up here and your girlfirend is missing" << endl;
-      cout << "'ask a question' "<< endl;
+      int answer;
+      cout << "What your name will be?: ";
+      cin  >> name;
+      cout << "-----------------------"<<endl;
+      cout << "---------------"<<endl;
+      cout << "----------"<<endl;
+      cout << "Once upon a time, in the south of the Mistlands, in the heat of the war between light and darkness, the two lovers had vowed to meet on a lonely night."<<endl;
+      cout << "--------------"<<endl;
+      cout << "You suddenly wake up to the sound of a scream and you start running straight to where the sound came from. "<<endl;
+      cout << "At the end of the road you see a huge stone door surrounded by branches and moss. and suddenly you hear a sound."<<endl;
+      cout << "The Voice: Welcome  "<< name << ",looking for your friend?" << endl;
       cout << endl;
       do{
-            cout << "1. Wait a minute, who are you ? "<< endl;
-            cout << "2. Where is my girlfriend ? Tell me NOW !!!! " << endl;
-            cout << "3. Explore the dungeon !!"<<endl;
-            cin >> input;
+            cout << "1.  Wait a minute, who are you ? How do you know my name? "<< endl;
+            cout << "2.  Where is my beloved ? Tell me NOW !!!! " << endl;
+            cout << "3.  *Explore the dungeon !!*(if you choose this, you will start playing.)"<<endl;
+            cout << "Answer: ";
+            cin >> answer;
             cout << endl;
-            if(input == 1){
-                  cout << "The voice: It really doesn't matter who i am. I am just here to help you this is a wired place to be in you need a guide"<<endl;
+            if(answer == 1){
+                  cout << "The Voice: It really doesn't matter who i am. I am just here to help you"<<endl;
             }
-            else if(input == 2){
-                  cout << "The voice: Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
+            else if(answer == 2){
+                  cout << "The Voice :  Thats a good question my friend but i think the answer is deep down in the dungeon"<<endl;
             }
-      }while(input != 3);
+      }while(answer != 3);
+      system("cls");
       return name;
 }
 string chooseCharacter(){
@@ -188,6 +195,7 @@ int main(){
             // reseting the event variable
             event = '.';
       }
+      
       return 0;
 }
 
