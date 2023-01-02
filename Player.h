@@ -395,7 +395,7 @@ public:
                 if (rnd == 7)
                 {
                     damage = Crit_Strike_Chance + (rand() % Attack);
-                    cout << "You did crit? aferin" << endl;
+                    cout << "CRITICAL DAMAGE!!" << endl;
                 }
 
                 else
