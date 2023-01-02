@@ -59,7 +59,7 @@ public:
     }
 
     // Attack method virtual//
-    virtual void battle(Enemy &e)
+    virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice;
@@ -108,7 +108,7 @@ public:
 
             if (Health < 30 && e.GetHealth() > 30)
             {
-                cout << "Your Healt is: " << Health << endl
+                cout << "Your Health is: " << Health << endl
                      << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;
@@ -117,6 +117,7 @@ public:
                 {
                     cout << "COWARD !-! " << endl;
                     cout << "";
+                    return 1;
                 }
             }
         }
@@ -125,11 +126,13 @@ public:
         if (Health <= 0)
         {
             cout << "You are dead!!" << endl;
+            return 0;
         }
 
         else if (e.GetHealth() <= 0)
         {
             cout << "Enemy is dead!!" << endl;
+            return 2;
         }
     }
 };
@@ -158,7 +161,7 @@ public:
         return temp / 10;
     }
 
-    virtual void battle(Enemy &e)
+    virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice;
@@ -228,6 +231,7 @@ public:
                 {
                     cout << "COWARD !-! " << endl;
                     cout << "";
+                    return 1;
                 }
             }
 
@@ -237,11 +241,13 @@ public:
         if (Health <= 0)
         {
             cout << "You are dead!!" << endl;
+            return 0;
         }
 
         else if (e.GetHealth() <= 0)
         {
             cout << "Enemy is dead!!" << endl;
+            return 2;
         }
         
     }
@@ -278,7 +284,7 @@ public:
         cout << Name << " replenishes " << amount << " mana." << endl;
     }
 
-    virtual void battle(Enemy &e)
+    virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice;
@@ -341,6 +347,7 @@ public:
                 {
                     cout << "COWARD !-! " << endl;
                     cout << "";
+                    return 1;
                 }
             }
         }
@@ -349,11 +356,13 @@ public:
         if (Health <= 0)
         {
             cout << "You are dead!!" << endl;
+            return 0;
         }
 
         else if (e.GetHealth() <= 0)
         {
             cout << "Enemy is dead!!" << endl;
+            return 2;
         }
     }
 };
@@ -372,7 +381,7 @@ public:
         Crit_Strike_Chance += amount/10;
         cout << Name << " improves their critical strike chance  " << amount/10 << endl;
     }
-    virtual void battle(Enemy &e)
+    virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice, rnd;
@@ -433,6 +442,7 @@ public:
                 {
                     cout << "COWARD !-! " << endl;
                     cout << "";
+                    return 1;
                 }
             }
         }
@@ -441,11 +451,13 @@ public:
         if (Health <= 0)
         {
             cout << "You are dead!!" << endl;
+            return 0;
         }
 
         else if (e.GetHealth() <= 0)
         {
             cout << "Enemy is dead!!" << endl;
+            return 2;
         }
     }
 };
