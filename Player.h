@@ -410,7 +410,7 @@ public:
             else if (choice == 2)
             {
 
-                e.SetHealth(e.GetHealth() - 1);
+                Health--;
                 cout << "Player defended and Player dealt 1 damage" << endl;
             }
 
