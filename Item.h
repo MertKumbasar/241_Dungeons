@@ -72,14 +72,13 @@ public:
     }
 };
 
-class MeleeWepon : public Item
+class Weapon : public Item
 {
-
 public:
     // Default Constructor//
-    MeleeWepon() : Item() {}
+    Weapon() : Item() {}
     // Overloaded Constructor//
-    MeleeWepon(int x, int y, int c) : Item(x, y, c) {}
+    Weapon(int x, int y, int c) : Item(x, y, c) {}
 };
 
 class MagicScroll : public Item

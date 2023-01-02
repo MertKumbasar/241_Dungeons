@@ -45,10 +45,10 @@ public:
     // Move method//
 
     // method to use MeleeWepon for attack and defense
-    void UseItem(MeleeWepon &meleeWepon)
+    void UseItem(Weapon &wepon)
     {
-        this->Attack += meleeWepon.getAttackPower();
-        this->Defense += meleeWepon.getdefensePower();
+        this->Attack += wepon.getAttackPower();
+        this->Defense += wepon.getdefensePower();
     }
 
     // method to use Potion for health
