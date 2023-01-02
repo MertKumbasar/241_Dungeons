@@ -326,7 +326,7 @@ public:
             if (e.GetHealth() > 0)
             {
                 Defense = 5 + (rand() % e.GetDefense());
-                Health = Health - (Defense - damage);
+                Health = Health - abs(Defense - damage);
                 cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
             }
 
