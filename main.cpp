@@ -114,6 +114,7 @@ int main(){
       else{
             cout << "YOU CHOOSED ROGUE" << endl << endl;
             player = new Rogue;
+            printRogue();
             cout << endl;
       }
       player->Setname(name);

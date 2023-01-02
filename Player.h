@@ -65,15 +65,16 @@ public:
         int damage, flag = 0, choice;
         string Escape;
 
-        // Display available attack options for the player
-        cout << "Choose your attack:" << endl;
-        cout << "1. Basic Attack" << endl;
-        cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
-        cout << "3. Defend" << endl;
-        cin >> choice;
+        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
+            // Display available attack options for the player
+            cout << "Choose your attack:" << endl;
+            cout << "1. Basic Attack" << endl;
+            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "3. Defend" << endl;
+            cin >> choice;
 
             if (choice == 1)
             { // Basic attack
@@ -173,7 +174,7 @@ public:
             cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
             cout << "3. Defend" << endl;
             cin >> choice;
-            //ARKADAŞLAR BUNU BURAYA EKLEDİM GÖRÜNTÜ GÜZEL OLSUN DİYE DİĞER CLASSLARDA YAPMADIM Bİ BAKIN SONRA DENERİZ!!
+           
             system("cls");
             if (choice == 1)
             { // Basic attack
@@ -283,16 +284,17 @@ public:
         int damage, flag = 0, choice;
         string Escape;
 
-        // Display available attack options for the player
-        cout << "Choose your attack:" << endl;
-        cout << "1. Basic Attack" << endl;
-        cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
-        cout << "3. Defend" << endl;
-        cin >> choice;
+        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
-
+            // Display available attack options for the player
+            cout << "Choose your attack:" << endl;
+            cout << "1. Basic Attack" << endl;
+            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "3. Defend" << endl;
+            cin >> choice;
+            system("cls");
             if (choice == 1)
             { // Basic attack
 
@@ -376,15 +378,16 @@ public:
         int damage, flag = 0, choice, rnd;
         string Escape;
 
-        // Display available attack options for the player
-        cout << "Choose your attack:" << endl;
-        cout << "1. Basic Attack (Chance of critic attack: %10)" << endl;
-        cout << "2. Defend" << endl;
-        cin >> choice;
+        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
-
+            // Display available attack options for the player
+            cout << "Choose your attack:" << endl;
+            cout << "1. Basic Attack (Chance of critic attack: %10)" << endl;
+            cout << "2. Defend" << endl;
+            cin >> choice;
+            system("cls");
             if (choice == 1)
             { // Basic attack
                 rnd = 1 + (rand() % 11);
@@ -421,8 +424,8 @@ public:
 
             if (Health < 30 && e.GetHealth() > 30)
             {
-                cout << "Your Healt is: " << Health << endl
-                     << "Enemy's health  is: " << e.GetHealth() << endl;
+                cout << "Your Healt is: " << Health << endl;
+                cout << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;
                 cin >> Escape;

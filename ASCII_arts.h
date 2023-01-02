@@ -78,8 +78,32 @@ void printMage(void){
         cout <<"  ||                hjm"<<endl;   
 }
 void printRogue(void){
-    
-}              
+        cout << "                       __.------.                       " << endl;   
+        cout << "                      (__  ___   )                      " << endl;   
+        cout << "                        .)e  )\\ /                       " << endl;   
+        cout << "                       /_.------                        " << endl;   
+        cout << "                       _/_    _/                        " << endl;   
+        cout << "                   __.'  / '   `-.__                    " << endl;   
+        cout << "                  / <.--'           `\\                  " << endl;   
+        cout << "                 /   \\   \\c           |                 " << endl;   
+        cout << "                /    /    )  GoT  x    \\                " << endl;   
+        cout << "                |   /\\    |c     / \\.-  \\               " << endl;   
+        cout << "                \\__/  )  /(     (   \\   <>'\\            " << endl;   
+        cout << "                     / _/ _\\-    `-. \\/_|_ /<>          " << endl;   
+        cout << "                    / /--/,-\\     _ \\     <>.`.         " << endl;   
+        cout << "                    \\/`--\\_._) - /   `-/\\    `.\\        " << endl;   
+        cout << "                     /        `.     /   )     `\\       " << endl;   
+        cout << "                     \\      \\   \\___/----'              " << endl;   
+        cout << "                     |      /    `(                     " << endl;   
+        cout << " ___________         \\    ./\\_   _ \\                    " << endl;   
+        cout << "   ______________    /     |  )    '|                   " << endl;   
+        cout << " __________________ |     /   \\     \\     ___________a:f" << endl;   
+        cout << "                   /     |     |____.)                  " << endl;   
+        cout << "                  /      \\  a88a\\___/88888a.            " << endl;   
+        cout << "                 \\_      :)8888888888888888888a.        " << endl;   
+        cout << "                /` `-----'  `Y88888888888888888         " << endl;   
+        cout << "                \\____|         `88888888888P' " << endl;
+}    
 
 
 #endif
