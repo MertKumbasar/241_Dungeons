@@ -65,14 +65,12 @@ public:
         int damage, flag = 0, choice;
         string Escape;
 
-        
-
         while (e.GetHealth() > 0 && Health > 0)
         {
             // Display available attack options for the player
             cout << "Choose your attack:" << endl;
             cout << "1. Basic Attack" << endl;
-            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "2. Special Attack" << endl;
             cout << "3. Defend" << endl;
             cin >> choice;
 
@@ -86,14 +84,14 @@ public:
             else if (choice == 2)
             { // Special attack
 
-                damage = 2 + (rand() % (Attack + 5)); // item a bağlı bir artış burada olabilir ya da speller, player type a göre
+                damage = 2 + (rand() % (Attack + 5));
                 e.SetHealth(e.GetHealth() - damage);
                 cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl;
             }
 
             else if (choice == 3)
-            {                 // Defend
-                Defense += 2; // burdan pek enim değilim defend için daha mantıklı bir şey olabilir defense random değişebilir gibi
+            { // Defend
+                Defense += 2;
                 cout << "Player defended and increased Defense by 2." << endl;
             }
 
@@ -149,14 +147,14 @@ public:
     void furymeter(int increase)
     {
         furryMeter += increase;
-        cout << Name << " increases their furry meter " << endl;
+        cout << Name << " increases their fury meter " << endl;
     }
 
     int unleashFurry()
     {
         int temp = 0;
         temp = furryMeter;
-        cout << Name << " unleashes their furry, increasing their attack power by " << furryMeter << "!" << endl;
+        cout << Name << " unleashes their fury, increasing their attack power by " << furryMeter << "!" << endl;
         furryMeter = 0;
         return temp / 10;
     }
@@ -168,7 +166,6 @@ public:
         string Escape;
 
         // Display available attack options for the player
-        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
@@ -177,14 +174,15 @@ public:
             cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
             cout << "3. Defend" << endl;
             cin >> choice;
-           
+
             system("cls");
             if (choice == 1)
             { // Basic attack
 
                 damage = 1 + (rand() % Attack);
                 e.SetHealth(e.GetHealth() - damage);
-                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl << endl;
+                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl
+                     << endl;
             }
             else if (choice == 2)
             { // unleash fury
@@ -192,13 +190,15 @@ public:
                 damage = 1 + (rand() % (Attack));
                 damage *= unleashFurry();
                 e.SetHealth(e.GetHealth() - damage);
-                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl << endl;
+                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl
+                     << endl;
             }
 
             else if (choice == 3)
             {
 
-                cout << "Player defended and your defense is increased" << endl << endl; // item gücü kadar defense artabilir şimdilik böyle kalsın elleme???
+                cout << "Player defended and your defense is increased" << endl
+                     << endl; // item gücü kadar defense artabilir şimdilik böyle kalsın elleme???
             }
 
             // Enemy turn
@@ -206,35 +206,34 @@ public:
             {
                 damage = 1 + (rand() % e.GetAttack());
                 furymeter(damage);
-                if (choice == 3){
-                    
+                if (choice == 3)
+                {
+
                     Defense = 5 + (rand() % e.GetDefense());
-                }    
-                else{
-                    
-                    Defense = 1 + (rand() % (e.GetDefense()));
-                    
                 }
-                    if (Defense<damage){
-                       
-                        Healt=damage-Defense;
-                        cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl << endl;
-                        
-                    }
-                    else{
-                         cout<<"Blocked!!"<<endl:    
-                         cout << "Enemy dealt: " << damage << " damage. Player blocked " << damage << " damage. Player's current Health is: " << Health << endl << endl;
-                         
-                    }
-                       
-    
-             
-                
+                else
+                {
+
+                    Defense = 1 + (rand() % (e.GetDefense()));
+                }
+                if (Defense < damage)
+                {
+
+                    Health = Health - (damage - Defense);
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
+                else
+                {
+                    cout << "Blocked!!" << endl;
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << damage << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
             }
 
             if (Health < 30 && e.GetHealth() > 30)
             {
-                cout << "Your Healt is: " << Health << endl;
+                cout << "Your Health is: " << Health << endl;
                 cout << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;
@@ -246,7 +245,6 @@ public:
                     return 1;
                 }
             }
-
         }
 
         // Determine the outcome of the battle
@@ -261,7 +259,6 @@ public:
             cout << "Enemy is dead!!" << endl;
             return 2;
         }
-        
     }
 };
 
@@ -302,14 +299,12 @@ public:
         int damage, flag = 0, choice;
         string Escape;
 
-        
-
         while (e.GetHealth() > 0 && Health > 0)
         {
             // Display available attack options for the player
             cout << "Choose your attack:" << endl;
             cout << "1. Basic Attack" << endl;
-            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "2. Special Attack" << endl;
             cout << "3. Defend" << endl;
             cin >> choice;
             system("cls");
@@ -318,7 +313,9 @@ public:
 
                 damage = 1 + (rand() % Attack);
                 e.SetHealth(e.GetHealth() - damage);
-                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
+                cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl
+                     << endl;
+                ;
             }
             else if (choice == 2)
             { // casspell
@@ -330,27 +327,45 @@ public:
 
                 e.SetHealth(e.GetHealth() - damage);
 
-                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl;
+                cout << "Player dealt " << damage << " damage with a special attack. Enemy current Health is " << e.GetHealth() << endl
+                     << endl;
+                ;
             }
 
             else if (choice == 3)
             {
 
                 replenishMana(20);
-                cout << "Player defended and your mana is increased" << endl;
+
+                cout << "Player defended and your mana is increased" << endl
+                     << endl;
+                ;
             }
 
             // Enemy turn
             if (e.GetHealth() > 0)
             {
+                damage = 1 + (rand() % e.GetAttack());
                 Defense = 5 + (rand() % e.GetDefense());
-                Health = Health - abs(Defense - damage);
-                cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
+
+                if (Defense < damage)
+                {
+
+                    Health = Health - (damage - Defense);
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
+                else
+                {
+                    cout << "Blocked!!" << endl;
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << damage << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
             }
 
             if (Health < 30 && e.GetHealth() > 30)
             {
-                cout << "Your Healt is: " << Health << endl
+                cout << "Your Health is: " << Health << endl
                      << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;
@@ -390,16 +405,14 @@ public:
 
     void improveCritChance(int amount)
     {
-        Crit_Strike_Chance += amount/10;
-        cout << Name << " improves their critical strike chance  " << amount/10 << endl;
+        Crit_Strike_Chance += amount / 10;
+        cout << Name << " improves their critical strike chance  " << amount / 10 << endl;
     }
     virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice, rnd;
         string Escape;
-
-        
 
         while (e.GetHealth() > 0 && Health > 0)
         {
@@ -430,17 +443,28 @@ public:
 
             else if (choice == 2)
             {
-
-                Health--;
-                cout << "Player defended and Player dealt 1 damage" << endl;
+                cout << "Player defended and Player dealt no damage" << endl;
             }
 
             // Enemy turn
             if (e.GetHealth() > 0)
             {
+                damage = 1 + (rand() % e.GetAttack());
                 Defense = 5 + (rand() % e.GetDefense());
-                Health = Health - (Defense - damage);
-                cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl;
+
+                if (Defense < damage)
+                {
+
+                    Health = Health - (damage - Defense);
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << Defense << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
+                else
+                {
+                    cout << "Blocked!!" << endl;
+                    cout << "Enemy dealt: " << damage << " damage. Player blocked " << damage << " damage. Player's current Health is: " << Health << endl
+                         << endl;
+                }
             }
 
             if (Health < 30 && e.GetHealth() > 30)
