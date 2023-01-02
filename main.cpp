@@ -100,16 +100,21 @@ int main(){
       player_type = chooseCharacter();
 
       if(player_type == "warrior"){
-            cout << "You choosed warrior" << endl << endl;
+            cout << "YOU CHOOSED WARROIR" << endl << endl;
             player = new Warrior;
+            printWarrior();
+            cout << endl;
       }
       else if(player_type == "mage"){
-            cout << "You choosed mage" << endl << endl;
+            cout << "YOU CHOOSED MAGE" << endl << endl;
             player = new Mage;
+            printMage();
+            cout << endl;
       }
       else{
-            cout << "You choosed rogue" << endl << endl;
+            cout << "YOU CHOOSED ROGUE" << endl << endl;
             player = new Rogue;
+            cout << endl;
       }
       player->Setname(name);
 

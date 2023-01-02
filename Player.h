@@ -9,6 +9,7 @@
 #include "Entity.h"
 #include "Enemy.h"
 #include "Item.h"
+#include "ASCII_arts.h"
 #include <cmath>
 using namespace std;
 
@@ -140,7 +141,7 @@ private:
 
 public:
     Warrior() : furryMeter{0} {}
-
+    friend void printWarrior(void);
     void furymeter(int increase)
     {
         furryMeter += increase;
@@ -241,6 +242,7 @@ public:
         {
             cout << "Enemy is dead!!" << endl;
         }
+        
     }
 };
 

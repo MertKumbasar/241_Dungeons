@@ -38,8 +38,48 @@ void printTitle(void){
       system("cls");
 }
 void printWarrior(void){
-   
+        cout <<" |\\             //"<<endl;
+        cout <<"  \\           _!_"<<endl;
+        cout <<"   \\         /___\\"<<endl;
+        cout <<"    \\        [+++]"<<endl;
+        cout <<"     \\    _ _\\^^^/_ _"<<endl;
+        cout <<"      \\/ (    '-'  ( )"<<endl;
+        cout <<"      /( \\/ | {&}   /\\ \\"<<endl;
+        cout <<"        \\  / \\     / _> )"<<endl;
+        cout <<"          \"`   >:::;-'`""'-."<<endl;
+        cout <<"             /::: /         \\"<<endl;
+        cout <<"            /  / ||   {&}   |"<<endl;
+        cout <<"           (  / ( \\         /"<<endl;
+        cout <<"           / /   \' -.___.-'"<<endl;
+        cout <<"     jgs _/ /     \\ \\"<<endl;
+        cout <<"        /___|    /___|"<<endl;
+}  
+void printMage(void){
+        cout <<"              _,-'|              " <<endl   ;
+        cout <<"           ,-'._  |" <<endl;
+        cout <<" .||,      |####\\ |" <<endl;
+        cout <<"\\.`',/     \\####| |" <<endl;
+        cout <<"= ,. =      |###| |" <<endl;
+        cout <<"/ || \\    ,-'\\#/,'`." <<endl;
+        cout <<"  ||     ,'   `,,. `." <<endl;
+        cout <<"  ,|____,' , ,;' \\| |" <<endl;
+        cout <<" (3|\\    _/|/'   _| |" <<endl;
+        cout <<"  ||/,-''  | >-'' _,\\" <<endl;
+        cout <<"  ||'      ==\\ ,-'  ,'" <<endl;
+        cout <<"  ||       |  V \\ ,|" <<endl;
+        cout <<"  ||       |    |` |" <<endl;
+        cout <<"  ||       |    |   \\" <<endl;
+        cout <<"  ||       |    \\    \\" <<endl;
+        cout <<"  ||       |     |    \\" <<endl;
+        cout <<"  ||       |      \\_,-'" <<endl;
+        cout <<"  ||       |___,,--\\)_\\" <<endl;
+        cout <<"  ||         |_|   ccc/" <<endl;
+        cout <<"  ||        ccc/" <<endl;
+        cout <<"  ||                hjm"<<endl;   
 }
+void printRogue(void){
+    
+}              
 
 
 #endif
