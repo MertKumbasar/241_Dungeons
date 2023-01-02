@@ -43,7 +43,6 @@ public:
         }
         */
     }
-    // Move method//
 
     // method to use MeleeWepon for attack and defense
     void UseItem(Weapon &wepon)
