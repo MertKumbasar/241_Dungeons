@@ -369,8 +369,8 @@ public:
 
     void improveCritChance(int amount)
     {
-        Crit_Strike_Chance += amount;
-        cout << Name << " improves their critical strike chance  " << amount / 10 << endl;
+        Crit_Strike_Chance += amount/10;
+        cout << Name << " improves their critical strike chance  " << amount/10 << endl;
     }
     virtual void battle(Enemy &e)
     {
@@ -403,7 +403,7 @@ public:
                     damage = 1 + (rand() % Attack);
                 }
                 e.SetHealth(e.GetHealth() - damage);
-                improveCritChance(damage / 10);
+                improveCritChance(damage);
                 cout << "Player dealt " << damage << " damage. Enemy current Health is " << e.GetHealth() << endl;
             }
 
