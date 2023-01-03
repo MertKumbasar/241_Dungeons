@@ -26,7 +26,7 @@ public:
     // destructor
     ~Item() {}
     // copy constructor//
-    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}, cost{obj.cost} {}
+    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}, cost{obj.cost}, NumberofUsesLeft{obj.NumberofUsesLeft} {}
     // move const ????
 
     // Getters//
@@ -34,41 +34,38 @@ public:
     int getdefensePower() { return defensePower; };
     int getcost() { return cost; };
     int getNumberofUsesLeft() { return NumberofUsesLeft; };
+    string getName() { return Name; };
 
     // Setters//
     void setAttackPower(int attackPower) { this->attackPower = attackPower; };
     void setdefensePower(int defensePower) { this->defensePower = defensePower; };
     void setcost(int cost) { this->cost = cost; };
     void setNumberofUsesLeft(int NumberofUsesLeft) { this->NumberofUsesLeft = NumberofUsesLeft; };
+    void setName(string Name) { this->Name = Name; };
 
-    void virtual PrintItemStatus(void)
+    // output stream operator overloading
+    friend ostream &operator<<(ostream &os, const Item &obj)
     {
-        cout << "Item's status: " << endl;
-        cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
-        cout << endl;
+        os << obj.Name << obj.attackPower << obj.defensePower;
+        return os;
     }
-    // friend ostream &operator<<(ostream &os, Item &obj)
-    // {
-    //     obj.PrintItemStatus();
-    //     return os;
-    // }
 
-    // copy asignment operator//
-    // virtual Item &operator=(const Item &s)
-    // {
-    //     if (this == &s)
-    //     {
-    //         return *this;
-    //     }
-    //     else
-    //     {
-    //         this->attackPower = s.attackPower;
-    //         this->defensePower = s.defensePower;
-    //         this->cost = s.cost;
-    //         this->Name = s.Name;
-    //         this->NumberofUsesLeft = s.NumberofUsesLeft;
-    //     }
-    // }
+    // copy asignment operator overloading
+    virtual Item &operator=(const Item &s)
+    {
+        if (this == &s)
+        {
+            return *this;
+        }
+        else
+        {
+            this->attackPower = s.attackPower;
+            this->defensePower = s.defensePower;
+            this->cost = s.cost;
+            this->Name = s.Name;
+            this->NumberofUsesLeft = s.NumberofUsesLeft;
+        }
+    }
 };
 
 class Weapon : public Item
@@ -107,14 +104,18 @@ private:
 
 public:
     // Default Constructor//
-    Potion() : Item(), healthBonus{25}{}
+    Potion() : Item(), healthBonus{25} {}
 
     // Getter
     int gethealthBonus() { return healthBonus; };
     // Setter
     void sethealthBonus(int healthBonus) { this->healthBonus = healthBonus; };
 
-    //
+    // printing healthBonus
+    void printHealthBonus()
+    {
+        
+    }
 };
 
 #endif
