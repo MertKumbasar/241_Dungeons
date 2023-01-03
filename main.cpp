@@ -167,7 +167,6 @@ int main(){
                         game_map.movePlayer_left_if_monster_lives();
                   }
                   else{
-                        cout << "YOU ARE DEAD !! " << endl;
                         game_is_on = 0;
                   }
                   system("pause");
@@ -184,6 +183,7 @@ int main(){
             event = '.';
       }
       if(battle_result == 0){
+            cout << "YOU ARE DEAD !! " << endl;
             cout << "------------------------------------------------------------------------------------"<< endl;
   	      cout << "                                     THE END                                         "<< endl;
       }

@@ -41,9 +41,9 @@ public:
         srand(time(NULL));
         int damage, flag = 0, choice;
         string Escape;
+        cout << Name << "occurs " << e.GetName() <<" the monster GUARD ON !!" << endl ;
 
         // Display available attack options for the player
-
         while (e.GetHealth() > 0 && Health > 0)
         {
             cout << "Choose your attack:" << endl;

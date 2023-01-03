@@ -1,1 +1,1 @@
-Enemy monsters[5];
+attle_result == 0)
