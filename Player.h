@@ -30,6 +30,8 @@ public:
     // Destructor//
     ~Player() {}
 
+    
+
     // Method for adding weapon//
     bool AddWeapon(Weapon &w)
     {
@@ -64,14 +66,14 @@ public:
             }
             else
             {
-                cout << "Please enter Yes or No" << endl;
-            }
-        } while (answer == "yes" || answer == "Yes" || answer == "No" || answer == "no");
+                cout << "Please enter Yes or No !.." << endl;
+          }
+        } while (answer != "yes" || answer != "Yes" || answer != "No" || answer != "no");
     }
 
     // method for using potion
     void DrinkPotion(Potion &p)
-    {
+    {  
         // printing health bonus of the potion
         p.printHealthBonus();
 
