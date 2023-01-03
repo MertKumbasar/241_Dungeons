@@ -83,7 +83,6 @@ void gotoxy(short x, short y) {
     SetConsoleCursorPosition(output, pos);
 }
 
-
 int main(){
       // variables for main
       string name,player_type;
@@ -91,7 +90,18 @@ int main(){
       char event = '.';
       int game_is_on = 1;
       // variables for main
+  
+      Weapon w1,w2,w3,w4,w5,*weapons{nullptr};
+      MagicScroll scroll(),ScrolBABA(),GODTIERSCROLL();
+      Potion p1(),p2(),p3(),p4(),p5();
+      int a;
 
+      weapons=new Weapon [5];
+      weapons={w1(20,20,"boklu kilic"),w2(5,5,"tombul bomba"),w3(),w4(),w5()};
+      cout<<w1<<endl;
+      cin>>a
+        
+    
       // objects for main
       Map game_map;
       Player *player;
