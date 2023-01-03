@@ -7,6 +7,9 @@
 #include "Enemy.h"
 #include "Item.h"
 #include "ASCII_arts.h"
+#include "Warrior.h"
+#include "Mage.h"
+#include "Rogue.h"
 
 
 //template <typename T > 

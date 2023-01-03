@@ -1,2 +1,0 @@
-//durdum ab
-system("pause");
