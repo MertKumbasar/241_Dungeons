@@ -10,37 +10,30 @@ class Item
 protected:
     int attackPower;
     int defensePower;
-    int cost;
     string Name;
-    int NumberofUsesLeft;
-
 public:
     // default const //
-    Item() : attackPower{0}, defensePower{0}, cost{0}, Name{"Uknown"}, NumberofUsesLeft{5} {}
+    Item() : attackPower{0}, defensePower{0}, Name{"Unknown"}{}
 
     // Overloaded Constructors//
-    Item(int a, int d, int c, int n) : attackPower{a}, defensePower{d}, cost{c}, NumberofUsesLeft{n} {}
-    // Item(int a, int d, int c) : attackPower{a}, defensePower{d}, cost{c} {}
-    Item(int a, int d, int n) : attackPower{a}, defensePower{d}, NumberofUsesLeft{n} {}
+    Item(int a, int d, string name) : attackPower{a}, defensePower{d}, Name{name} {}
+    Item(int a, int d) : attackPower{a}, defensePower{d} {}
+    Item(string name) : Name{name} {}
 
     // destructor
     ~Item() {}
     // copy constructor//
-    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}, cost{obj.cost}, NumberofUsesLeft{obj.NumberofUsesLeft} {}
+    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}{}
     // move const ????
 
     // Getters//
     int getAttackPower() { return attackPower; };
     int getdefensePower() { return defensePower; };
-    int getcost() { return cost; };
-    int getNumberofUsesLeft() { return NumberofUsesLeft; };
     string getName() { return Name; };
 
     // Setters//
     void setAttackPower(int attackPower) { this->attackPower = attackPower; };
     void setdefensePower(int defensePower) { this->defensePower = defensePower; };
-    void setcost(int cost) { this->cost = cost; };
-    void setNumberofUsesLeft(int NumberofUsesLeft) { this->NumberofUsesLeft = NumberofUsesLeft; };
     void setName(string Name) { this->Name = Name; };
 
         // copy asignment operator overloading
@@ -54,9 +47,7 @@ public:
         {
             this->attackPower = s.attackPower;
             this->defensePower = s.defensePower;
-            this->cost = s.cost;
             this->Name = s.Name;
-            this->NumberofUsesLeft = s.NumberofUsesLeft;
         }
     }
 };
@@ -67,7 +58,7 @@ public:
     // Default Constructor//
     Weapon() : Item() {}
     // Overloaded Constructor//
-    Weapon(int x, int y, int c) : Item(x, y, c) {}
+    Weapon(int a, int d, string name) : Item(a, d, name) {}
 
     // output stream operator overloading
     friend ostream &operator<<(ostream &os, Item &obj)
@@ -88,7 +79,7 @@ public:
     MagicScroll() : Item(), ManaCost{0} {}
 
     // Overloaded Constructor
-    MagicScroll(int a, int d, int n, int p) : Item(a, d, n), ManaCost{p} {}
+    MagicScroll(int a, int d, string name, int mc  ) : Item (a, d, name), ManaCost{mc} {}
 
     // getter
     int getManaCost() { return ManaCost; };
@@ -105,6 +96,9 @@ private:
 public:
     // Default Constructor//
     Potion() : Item(), healthBonus{25} {}
+
+    // Overloaded Constructor
+    Potion(string name, int bonus) : Item(name), healthBonus{bonus}{}
 
     // Getter
     int gethealthBonus() { return healthBonus; };
