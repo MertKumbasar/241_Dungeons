@@ -63,7 +63,7 @@ public:
     // output stream operator overloading
     friend ostream &operator<<(ostream &os, Item &obj)
     {
-        os << obj.getName() << obj.getAttackPower() << obj.getdefensePower();
+        os << obj.getName()<<"  " << obj.getAttackPower()<<"  "  << obj.getdefensePower()<<endl;
         return os;
     }
 };

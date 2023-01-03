@@ -31,6 +31,8 @@ Map::Map(){
     map[5][9] = 'M';
     map[10][3] = 'M';
     map[14][5] = 'M';
+    map[3][3]='<';
+    map[1][3]='>';
     
 }
 void Map::printMap(){
