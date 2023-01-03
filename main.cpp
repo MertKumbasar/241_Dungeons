@@ -91,17 +91,24 @@ int main(){
       int game_is_on = 1;
       // variables for main
   
-      Weapon w1,w2,w3,w4,w5,*weapons{nullptr};
+      Weapon *weapons{nullptr};
       MagicScroll scroll(),ScrolBABA(),GODTIERSCROLL();
       Potion p1(),p2(),p3(),p4(),p5();
       int a;
 
       weapons=new Weapon [5];
-      weapons={w1(20,20,"boklu kilic"),w2(5,5,"tombul bomba"),w3(),w4(),w5()};
-      cout<<w1<<endl;
-      cin>>a
+
+      weapons[0]= Weapon (30,40,"bormadeni");
+      weapons[1]= Weapon (30,40,"koklukilic");
+      weapons[2]= Weapon (30,40,"uzunkilic");
+      weapons[3]= Weapon (30,40,"derinkilic");
+      weapons[4]= Weapon (30,40,"akiskan");
+      cout<<weapons[0];
+   
+   
         
     
+
       // objects for main
       Map game_map;
       Player *player;
