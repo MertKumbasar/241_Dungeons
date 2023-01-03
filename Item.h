@@ -47,29 +47,34 @@ public:
         cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
         cout << endl;
     }
-
-    friend ostream &operator<<(ostream &os, Item &obj)
+void virtual PrintItemStatus(void)
     {
-        obj.PrintItemStatus();
-        return os;
+        cout << "Item's status: " << endl;
+        cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
+        cout << endl;
     }
+    // friend ostream &operator<<(ostream &os, Item &obj)
+    // {
+    //     obj.PrintItemStatus();
+    //     return os;
+    // }
 
     // copy asignment operator//
-    virtual Item &operator=(const Item &s)
-    {
-        if (this == &s)
-        {
-            return *this;
-        }
-        else
-        {
-            this->attackPower = s.attackPower;
-            this->defensePower = s.defensePower;
-            this->cost = s.cost;
-            this->Name = s.Name;
-            this->NumberofUsesLeft = s.NumberofUsesLeft;
-        }
-    }
+    // virtual Item &operator=(const Item &s)
+    // {
+    //     if (this == &s)
+    //     {
+    //         return *this;
+    //     }
+    //     else
+    //     {
+    //         this->attackPower = s.attackPower;
+    //         this->defensePower = s.defensePower;
+    //         this->cost = s.cost;
+    //         this->Name = s.Name;
+    //         this->NumberofUsesLeft = s.NumberofUsesLeft;
+    //     }
+    // }
 };
 
 class Weapon : public Item
@@ -108,10 +113,7 @@ private:
 
 public:
     // Default Constructor//
-    Potion() : Item(), healthBonus{25}
-    {
-        NumberofUsesLeft = 2;
-    }
+    Potion() : Item(), healthBonus{25}{}
 
     // Getter
     int gethealthBonus() { return healthBonus; };
