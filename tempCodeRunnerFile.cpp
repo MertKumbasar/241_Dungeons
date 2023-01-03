@@ -1,0 +1,1 @@
+Enemy monsters[5];

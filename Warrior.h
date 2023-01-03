@@ -131,7 +131,7 @@ public:
             return 0;
         }
 
-        else if (e.GetHealth() <= 0)
+        else
         {
             cout << "Enemy is dead!!" << endl;
             return 2;

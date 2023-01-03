@@ -87,7 +87,7 @@ void gotoxy(short x, short y) {
 int main(){
       // variables for main
       string name,player_type;
-      int input;
+      int input,counter {0}, battle_result{0};
       char event = '.';
       int game_is_on = 1;
       // variables for main
@@ -95,7 +95,7 @@ int main(){
       // objects for main
       Map game_map;
       Player *player;
-      Enemy e1;
+      Enemy monsters[5];
       // objects for main
 
       printTitle();
@@ -156,11 +156,21 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  player->battle(e1);
+                  battle_result = player->battle(monsters[counter]);
+                  counter++;
                   system("cls");
-                  //if( monster lives ){
-                  //      game_map.movePlayer_left_if_monster_lives();
-                  // }
+                  if(battle_result == 2){
+                        cout << "MONSTER IS DEAD!! " << endl << "GOOD JOB" << endl;
+                  }
+                  else if(battle_result == 1){
+                        cout << "COWARD !-! " << endl;
+                        game_map.movePlayer_left_if_monster_lives();
+                  }
+                  else{
+                        cout << "YOU ARE DEAD !! " << endl;
+                        game_is_on = 0;
+                  }
+                  system("pause");
                   system("cls");      
             }
             else if(event == 'I'){
@@ -173,6 +183,22 @@ int main(){
             // reseting the event variable
             event = '.';
       }
+      if(battle_result == 0){
+            cout << "------------------------------------------------------------------------------------"<< endl;
+  	      cout << "                                     THE END                                         "<< endl;
+      }
+      else{
+            cout << "-With the beast falling to the ground"<<endl;
+            cout << "....."<<endl;
+            cout << "-Your loved one is slowly sobering up"<<endl;
+            cout << "After darkness has banished, a door opens by itself and beams of light enter the dungeon "<<endl;
+            cout << "You and your lover manage escape out of the dungeon by walking out that door "<<endl;
+            cout << "------------------------------------------------------------------------------------"<< endl;
+            cout << "                                     THE END                                         "<< endl;
+      }
+
+
+
       delete player;
       return 0;
 }

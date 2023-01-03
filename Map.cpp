@@ -27,6 +27,11 @@ Map::Map(){
     }
     map[dir_x_of_player][dir_y_of_player] = 'P';
     map[2][3] = 'M';
+    map[2][7] = 'M';
+    map[5][9] = 'M';
+    map[10][3] = 'M';
+    map[14][5] = 'M';
+    
 }
 void Map::printMap(){
     for (size_t i = 0; i < height; i++){
