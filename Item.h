@@ -43,14 +43,7 @@ public:
     void setNumberofUsesLeft(int NumberofUsesLeft) { this->NumberofUsesLeft = NumberofUsesLeft; };
     void setName(string Name) { this->Name = Name; };
 
-    // output stream operator overloading
-    friend ostream &operator<<(ostream &os, const Item &obj)
-    {
-        os << obj.Name << obj.attackPower << obj.defensePower;
-        return os;
-    }
-
-    // copy asignment operator overloading
+        // copy asignment operator overloading
     virtual Item &operator=(const Item &s)
     {
         if (this == &s)
@@ -75,6 +68,13 @@ public:
     Weapon() : Item() {}
     // Overloaded Constructor//
     Weapon(int x, int y, int c) : Item(x, y, c) {}
+
+    // output stream operator overloading
+    friend ostream &operator<<(ostream &os, Item &obj)
+    {
+        os << obj.getName() << obj.getAttackPower() << obj.getdefensePower();
+        return os;
+    }
 };
 
 class MagicScroll : public Item
@@ -114,7 +114,7 @@ public:
     // printing healthBonus
     void printHealthBonus()
     {
-        
+        cout << "Health bonus of the potion is: " << healthBonus << endl;
     }
 };
 

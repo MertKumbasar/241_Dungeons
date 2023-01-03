@@ -16,40 +16,65 @@ using namespace std;
 class Player : public Entity
 {
 protected:
-    vector<Item> Inventory;
+    vector<Weapon> Inventory;
 
 public:
     // Default Constructor//
     Player() : Entity(){};
 
     // Overloaded Constructors//
-    Player(vector<Item> newitems) : Entity(), Inventory{newitems} {};
+    Player(vector<Weapon> newWeapon) : Entity(), Inventory{newWeapon} {};
 
     // Copy constructor//
 
     // Destructor//
     ~Player() {}
 
-    // Method for adding item//
+    // Method for adding weapon//
     bool AddWeapon(Weapon &w)
     {
-
+        string answer;
         // Print status//
         cout << w;
+        do
+        {
+            cout << "Would you like to pick this weapon? (Yes / No): ";
+            cin >> answer;
 
-        // Player Stat increase//
-        Attack += w.getAttackPower();
-        Defense += w.getdefensePower();
+            if (answer == "yes" || answer == "Yes" || answer == "y" || answer == "Y")
+            {
+                // Player Stat increase//
+                Attack += w.getAttackPower();
+                Defense += w.getdefensePower();
 
-        // Adding Weapon to İnventory//
-        Inventory.push_back(w);
+                // Adding Weapon to İnventory//
+                Inventory.push_back(w);
 
-        cout << endl;
-        cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
+                cout << endl;
+                cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
+
+                return true;
+            }
+            else if (answer == "No" || answer == "no" || answer == "n" || answer == "N")
+            {
+                cout << "Well, i hope you made a good decision.." << endl;
+                cout << w.getName() << " is not added to your inventory." << endl;
+
+                return false;
+            }
+            else
+            {
+                cout << "Please enter Yes or No" << endl;
+            }
+        } while (answer == "yes" || answer == "Yes" || answer == "No" || answer == "no");
     }
+
+    // method for using potion
     void DrinkPotion(Potion &p)
     {
-        
+        // printing health bonus of the potion
+        p.printHealthBonus();
+
         // Player Health İncrease//
         if (Health < 100)
         {
@@ -74,7 +99,7 @@ public:
     }
 
     // function for printing player status//
-    void PrintStatus(Player &p1)
+    virtual void PrintStatus(Player &p1)
     {
         cout << "Your name is: " << p1.Name << endl;
         cout << "Your score is: " << p1.Score << endl;
@@ -82,25 +107,13 @@ public:
         cout << "Your health is: " << p1.Health << endl;
         cout << "Your attack power is: " << p1.Attack << endl;
         cout << "Your total gold is: " << p1.Total_Gold << endl;
-        cout << "Items you have are: " << endl;
-        /*for (int i{0}; i < nrOfItems; i++)
+
+        cout << "Items you have in inventory are: " << endl;
+        for (size_t i{0}; i < Inventory.size(); i++)
         {
-            cout << itemsList[i];
+            cout << Inventory[i];
         }
-        */
-    }
-
-    // method to use MeleeWepon for attack and defense
-    void UseItem(Weapon &wepon)
-    {
-        this->Attack += wepon.getAttackPower();
-        this->Defense += wepon.getdefensePower();
-    }
-
-    // method to use Potion for health
-    void UsePotion(Potion &potion)
-    {
-        this->Health += potion.gethealthBonus();
+        cout << endl;
     }
 
     // Attack method virtual//
