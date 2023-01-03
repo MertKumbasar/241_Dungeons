@@ -42,12 +42,29 @@ public:
         cout << Name << " replenishes " << amount << " mana." << endl;
     }
 
+    virtual void PrintStatus(Player &p1)
+    {
+        cout << "Your name is: " << p1.GetName() << endl;
+        cout << "Your score is: " << p1.GetScore() << endl;
+        cout << "Your defense power is : " << p1.GetDefense() << endl;
+        cout << "Your health is: " << p1.GetHealth() << endl;
+        cout << "Your attack power is: " << p1.GetAttack() << endl;
+        cout << "Your total gold is: " << p1.GetTotalGold() << endl;
+
+        cout << "Items you have in inventory are: " << endl;
+        for (size_t i{0}; i < Inventory.size(); i++)
+        {
+            cout << Inventory[i];
+        }
+        cout << endl;
+    }
+
     virtual int battle(Enemy &e)
     {
         srand(time(NULL));
         int damage, flag = 0, choice;
         string Escape;
-        cout << Name << "occurs " << e.GetName() <<" the monster GUARD ON !!" << endl ;
+        cout << Name << "occurs " << e.GetName() << " the monster GUARD ON !!" << endl;
         while (e.GetHealth() > 0 && Health > 0)
         {
             // Display available attack options for the player
