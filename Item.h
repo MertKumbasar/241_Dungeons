@@ -47,12 +47,6 @@ public:
         cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
         cout << endl;
     }
-void virtual PrintItemStatus(void)
-    {
-        cout << "Item's status: " << endl;
-        cout << "Name is: " << Name << ", Attack power is: " << attackPower << ", Defense power is: " << defensePower << ", Cost is: " << cost << ", Number of uses left: " << NumberofUsesLeft;
-        cout << endl;
-    }
     // friend ostream &operator<<(ostream &os, Item &obj)
     // {
     //     obj.PrintItemStatus();
