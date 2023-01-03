@@ -11,21 +11,60 @@
 #include "Item.h"
 #include "ASCII_arts.h"
 #include <cmath>
+#include <vector>
 using namespace std;
 
 class Player : public Entity
 {
+    protected:
+    vector <Item> Inventory;
+
 
 public:
     // Default Constructor//
     Player() : Entity(){};
 
     // Overloaded Constructors//
+    Player(vector <Item> newitems) : Entity(), Inventory {newitems} {}; 
 
     // Copy constructor//
 
     // Destructor//
     ~Player() {}
+
+    //Method for adding item//
+    bool AddWeapon(Weapon &w){
+        //Print status//
+
+        //Player Stat increase//
+        Attack +=w.getAttackPower();
+        Defense +=w.getdefensePower();
+
+        //Adding Weapon to İnventory//
+        Inventory.push_back(w);
+
+    }
+    void DrinkPotion(Potion &p){
+        //Player Health İncrease//
+        if(Health <100)
+        {
+            if(Health +=p.gethealthBonus() >100)
+            {
+                Health=100;
+                cout<<"Bon appétit!!"<<endl;
+                cout<<"Your Health is full now!!"<<endl;
+            }
+            else{
+                Health +=p.gethealthBonus();
+                cout<<"Enjoy,your health is increased by-"<<p.gethealthBonus()<<"!!!"<<endl;
+                cout<<"Your health is now "<<Health<<"!!!"<<endl;
+            }
+        }
+        else{
+            cout<<"You drank the potion,but it has no effect!!!"<<endl;
+            cout<<"Your health is already full!!!"<<endl;
+        }
+    }
 
     // function for printing player status//
     void PrintStatus(Player &p1)
@@ -272,6 +311,7 @@ public:
         }
     }
 };
+
 
 class Mage : public Player
 {
