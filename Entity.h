@@ -22,6 +22,7 @@ public:
 
     // Overloaded Constructor
     Entity(string str, int healt, int attck, int def) : Name{str}, Health{healt}, Attack{attck}, Defense{def} {}
+    Entity(string name): Name{name}{}
 
     // Destructor
     ~Entity() {}
