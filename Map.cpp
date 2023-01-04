@@ -7,7 +7,7 @@
 #include <time.h>
 using namespace std;
 
-Map::Map(int mage_yes_no){
+Map::Map(){
     for (size_t i = 0; i < height; i++){
         for (size_t j = 0; j < width; j++){
             if(i==2 && (j%4==0 && j != 0 && j!=20 ) || i==6 && (j%4==0 && j != 0 && j!=20)|| i==10 && 
@@ -60,13 +60,6 @@ Map::Map(int mage_yes_no){
     map[13][3].ch = 'H';
     map[13][3].index = 1;
 
-    
-
-
-    if(mage_yes_no){
-
-
-    }
 
     
 }

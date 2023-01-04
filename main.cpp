@@ -114,7 +114,7 @@ int main()
       // variables for main
 
       // objects for main
-      
+      Map game_map;
       Player *player;
       Enemy monsters[5];
       Weapon weapons[5];
@@ -171,7 +171,6 @@ int main()
       cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!" << endl;
       system("pause");
       system("cls");
-      Map game_map(mage_yes_no);
       while (game_is_on)
       {
             gotoxy(0, 0);

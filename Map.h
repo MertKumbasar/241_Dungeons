@@ -15,7 +15,7 @@ class Map{
         char_And_index map[30][30];
         int dir_x_of_player = 2;
         int dir_y_of_player = 2;
-        Map(int mage_yes_no);
+        Map();
         void printMap();
         char movePlayer_up();
         char movePlayer_down();
