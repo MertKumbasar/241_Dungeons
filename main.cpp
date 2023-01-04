@@ -121,19 +121,18 @@ int main()
       Potion potions[4];
 
       potions[0] = Potion("mini_health_potion", 25);
-      potions[1] = Potion("medium_health_potion", 50);
-      potions[2] = Potion("large_health_potion", 70);
-      potions[3] = Potion("Health_Elixir", 100);
+      potions[1] = Potion("large_health_potion", 50);
+      
 
-      weapons[0] = Weapon(23, 21, "Sword");
+      weapons[0] = Weapon(10, 10, "Sword");
       weapons[1] = Weapon(16, 2, "Axe");
       weapons[2] = Weapon(8, 7, "Dagger");
       weapons[3] = Weapon(20, 0, "Bow");
       weapons[4] = Weapon(15, 11, "Spear");
 
-      monsters[0] = Enemy("Koblin", 100, 21, 45);
-      monsters[1] = Enemy("Melkor", 12, 10, 25);
-      monsters[2] = Enemy("Talrog", 75, 75, 35);
+      monsters[0] = Enemy("Koblin", 100, 30, 45);
+      monsters[1] = Enemy("Melkor", 75, 31, 25);
+      monsters[2] = Enemy("Talrog", 75, 45, 35);
       monsters[3] = Enemy("Bohr", 10, 110, 20);
       monsters[4] = Enemy("Asmodeus", 200, 60, 45); // final boss
       // objects for main
@@ -259,6 +258,14 @@ int main()
                   cout << "You found an item!!!" << endl;
                   cout << "Atributes of item are:" << endl;
                   player->AddWeapon(weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
+                  system("pause");
+                  system("cls");
+            }
+            else if (event == 'H'){
+                  system("cls");
+                  cout << "You found an potion!!!" << endl;
+                  cout << "Atributes of potion are:" << endl;
+                  player->DrinkPotion(potions[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
                   system("pause");
                   system("cls");
             }

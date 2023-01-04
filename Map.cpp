@@ -54,6 +54,15 @@ Map::Map(int mage_yes_no){
     map[18][11].index = 4;
 
 
+    map[6][2].ch = 'H';
+    map[6][2].index = 0;
+
+    map[13][3].ch = 'H';
+    map[13][3].index = 1;
+
+    
+
+
     if(mage_yes_no){
 
 
