@@ -7,7 +7,12 @@ class Map{
         int height = 21;
         int width = 21;
     public:
-        char map[30][30];
+        struct char_And_index
+        {
+            char ch;
+            int index;
+        };
+        char_And_index map[30][30];
         int dir_x_of_player = 2;
         int dir_y_of_player = 2;
         Map();

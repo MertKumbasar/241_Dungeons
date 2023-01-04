@@ -90,49 +90,41 @@ int main(){
       char event = '.';
       int game_is_on = 1;
       // variables for main
-  
-      Weapon *weapons{nullptr};
-      MagicScroll scroll(),ScrolBABA(),GODTIERSCROLL();
-      Potion p1(),p2(),p3(),p4(),p5();
-      int a;
-
-      weapons=new Weapon [5];
-
-      weapons[0]= Weapon (30,40,"bormadeni");
-      weapons[1]= Weapon (30,40,"koklukilic");
-      weapons[2]= Weapon (30,40,"uzunkilic");
-      weapons[3]= Weapon (30,40,"derinkilic");
-      weapons[4]= Weapon (30,40,"akiskan");
-      cout<<weapons[0];
-   
-   
-        
-    
 
       // objects for main
       Map game_map;
       Player *player;
       Enemy monsters[5];
+      Weapon weapons[2];
+
+      weapons[0] = Weapon(40,40,"sword");
+      weapons[1] = Weapon(30,30,"axe");
       // objects for main
+
+   
+   
+        
+    
+
 
       printTitle();
       name = firstChapter();
       player_type = chooseCharacter();
 
       if(player_type == "warrior"){
-            cout << "YOU CHOOSED WARROIR" << endl << endl;
+            cout << "YOU CHOSE WARROIR" << endl << endl;
             player = new Warrior;
             printWarrior();
             cout << endl;
       }
       else if(player_type == "mage"){
-            cout << "YOU CHOOSED MAGE" << endl << endl;
+            cout << "YOU CHOSE MAGE" << endl << endl;
             player = new Mage;
             printMage();
             cout << endl;
       }
       else{
-            cout << "YOU CHOOSED ROGUE" << endl << endl;
+            cout << "YOU CHOSE ROGUE" << endl << endl;
             player = new Rogue;
             printRogue();
             cout << endl;
@@ -145,6 +137,7 @@ int main(){
       
       while(game_is_on){
             gotoxy(0,0);
+
             game_map.printMap();
             Sleep(100);
             
@@ -173,9 +166,9 @@ int main(){
             }
             if(event == 'M'){
                   system("cls");
-                  battle_result = player->battle(monsters[counter]);
-                  counter++;
+                  battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
                   system("cls");
+
                   if(battle_result == 2){
                         cout << "MONSTER IS DEAD!! " << endl << "GOOD JOB" << endl;
                   }
@@ -191,7 +184,7 @@ int main(){
             }
             else if(event == 'I'){
                   system("cls");
-                  cout << "item event!!!";
+                  cout << weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index];
                   //Returnn to map in 3 sec
                   Sleep(1000);
             }
@@ -213,9 +206,6 @@ int main(){
             cout << "------------------------------------------------------------------------------------"<< endl;
             cout << "                                     THE END                                         "<< endl;
       }
-
-
-
       delete player;
       return 0;
 }

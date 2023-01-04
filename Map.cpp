@@ -12,33 +12,45 @@ Map::Map(){
         for (size_t j = 0; j < width; j++){
             if(i==2 && (j%4==0 && j != 0 && j!=20 ) || i==6 && (j%4==0 && j != 0 && j!=20)|| i==10 && 
             (j%4==0 && j != 0 && j!=20)|| i==14 && (j%4==0 && j != 0 && j!=20) || i==18 && (j%4==0 && j != 0 && j!=20)){
-                map[i][j] = '|';
+                map[i][j].ch = '|';
+                map[i][j].index = -1;
             }
             else if(j==2 && (i%8==0 && i != 0 && i!=20 ) || j==18 && (i%4==0 && i != 0 && i!=20 && i != 8 && i != 16)){
-                map[i][j] = '-';
+                map[i][j].ch = '-';
+                map[i][j].index = -1;
             }
             else if( i%4 == 0 || j%4 == 0){
-                map[i][j] = '#';
+                map[i][j].ch = '#';
+                map[i][j].index = -1;
             }
             else{
-                 map[i][j] = '.';
+                 map[i][j].ch = '.';
+                 map[i][j].index = -1;
             }
         }    
     }
-    map[dir_x_of_player][dir_y_of_player] = 'P';
-    map[2][3] = 'M';
-    map[2][7] = 'M';
-    map[5][9] = 'M';
-    map[10][3] = 'M';
-    map[14][5] = 'M';
-    map[3][3]='<';
-    map[1][3]='>';
+    map[dir_x_of_player][dir_y_of_player].ch = 'P';
+    map[1][3].ch = 'M';
+    map[1][3].index = 0;
+    map[2][7].ch = 'M';
+    map[2][7].index = 1;
+    map[5][9].ch = 'M';
+    map[5][9].index = 2;
+    map[10][3].ch = 'M';
+    map[10][3].index = 3;
+    map[14][5].ch = 'M';
+    map[14][5].index = 4;
+
+    map[1][2].ch = 'I';
+    map[1][2].index = 0;
+    map[2][6].ch = 'I';
+    map[2][6].index = 1;
     
 }
 void Map::printMap(){
     for (size_t i = 0; i < height; i++){
         for (size_t j = 0; j < width; j++){
-          cout << map[i][j] << " ";
+          cout << map[i][j].ch << " ";
         }
         cout << endl;   
     }
@@ -47,16 +59,16 @@ char Map::movePlayer_up(){
     char event = '.';
     int temp_x = dir_x_of_player - 1;
     int temp_y = dir_y_of_player;
-    if(map[temp_x][temp_y] == 'M'){
+    if(map[temp_x][temp_y].ch == 'M'){
         event = 'M';
     }
-    else if(map[temp_x][temp_y] == 'I'){
+    else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
-    if(map[temp_x][temp_y] != '#'){
-        map[dir_x_of_player][dir_y_of_player] = '.';
+    if(map[temp_x][temp_y].ch != '#'){
+        map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_x_of_player -= 1;
-        map[dir_x_of_player][dir_y_of_player] = 'P';
+        map[dir_x_of_player][dir_y_of_player].ch = 'P';
         
     }
     return event;
@@ -65,16 +77,16 @@ char Map::movePlayer_down(){
     char event = '.';
     int temp_x = dir_x_of_player + 1;
     int temp_y = dir_y_of_player;
-    if(map[temp_x][temp_y] == 'M'){
+    if(map[temp_x][temp_y].ch == 'M'){
         event = 'M';
     }
-    else if(map[temp_x][temp_y] == 'I'){
+    else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
-    if(map[temp_x][temp_y] != '#'){
-        map[dir_x_of_player][dir_y_of_player] = '.';
+    if(map[temp_x][temp_y].ch != '#'){
+        map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_x_of_player += 1;
-        map[dir_x_of_player][dir_y_of_player] = 'P';
+        map[dir_x_of_player][dir_y_of_player].ch = 'P';
         
     }
     return event;
@@ -83,16 +95,16 @@ char Map::movePlayer_left(){
     char event = '.';
     int temp_x = dir_x_of_player;
     int temp_y = dir_y_of_player - 1;
-    if(map[temp_x][temp_y] == 'M'){
+    if(map[temp_x][temp_y].ch == 'M'){
         event = 'M';
     }
-    else if(map[temp_x][temp_y] == 'I'){
+    else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
-    if(map[temp_x][temp_y] != '#'){
-        map[dir_x_of_player][dir_y_of_player] = '.';
+    if(map[temp_x][temp_y].ch != '#'){
+        map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_y_of_player -= 1;
-        map[dir_x_of_player][dir_y_of_player] = 'q';
+        map[dir_x_of_player][dir_y_of_player].ch = 'q';
         
     }
     return event;
@@ -101,24 +113,24 @@ char Map::movePlayer_right(){
     char event = '.';
     int temp_x = dir_x_of_player;
     int temp_y = dir_y_of_player + 1;
-    if(map[temp_x][temp_y] == 'M'){
+    if(map[temp_x][temp_y].ch == 'M'){
         event = 'M';
     }
-    else if(map[temp_x][temp_y] == 'I'){
+    else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
-    if(map[temp_x][temp_y] != '#'){
-        map[dir_x_of_player][dir_y_of_player] = '.';
+    if(map[temp_x][temp_y].ch != '#'){
+        map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_y_of_player += 1;
-        map[dir_x_of_player][dir_y_of_player] = 'P';
+        map[dir_x_of_player][dir_y_of_player].ch = 'P';
        
     }
     return event;
 }
 void Map::movePlayer_left_if_monster_lives(void){
-    map[dir_x_of_player][dir_y_of_player] = 'M';
+    map[dir_x_of_player][dir_y_of_player].ch = 'M';
     dir_y_of_player -= 1;
-    map[dir_x_of_player][dir_y_of_player] = 'P';
+    map[dir_x_of_player][dir_y_of_player].ch = 'P';
 }
 void Map::pauseMenu(void){
     system("cls");

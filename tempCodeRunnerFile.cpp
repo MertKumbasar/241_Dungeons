@@ -1,1 +1,0 @@
-attle_result == 0)
