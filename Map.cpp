@@ -177,6 +177,7 @@ void Map::pauseMenu(void){
     cout << "---- MAP LEGEND ------"<<endl;
     cout << "P is PLAYER"<<endl;
     cout << "M is MONSTER"<<endl;
+    cout << "I is Item"<<endl;
     cout << "H is HEALTH POTION" << endl;
     
 }
