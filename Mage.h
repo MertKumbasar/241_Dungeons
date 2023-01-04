@@ -138,7 +138,7 @@ public:
                 }
             }
 
-            if (Health < 30 && e.GetHealth() > 30)
+            if (Health < 30 && e.GetHealth() > 30 && Health > 0)
             {
                 cout << "Your Health is: " << Health << endl
                      << "Enemy's health  is: " << e.GetHealth() << endl;

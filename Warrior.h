@@ -30,6 +30,9 @@ public:
     int unleashFurry()
     {
         int temp = 0;
+        if(furryMeter > 100){
+            furryMeter = 100;
+        }
         temp = furryMeter;
         cout << Name << " unleashes their fury, increasing their attack power by " << furryMeter << "!" << endl;
         furryMeter = 0;
@@ -127,7 +130,7 @@ public:
                 }
             }
 
-            if (Health < 30 && e.GetHealth() > 30)
+            if (Health < 30 && e.GetHealth() > 30 && Health > 0)
             {
                 cout << "Your Health is: " << Health << endl;
                 cout << "Enemy's health  is: " << e.GetHealth() << endl;

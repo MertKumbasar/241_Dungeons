@@ -124,17 +124,17 @@ int main()
       potions[1] = Potion("large_health_potion", 50);
       
 
-      weapons[0] = Weapon(10, 10, "Sword");
-      weapons[1] = Weapon(16, 2, "Axe");
-      weapons[2] = Weapon(8, 7, "Dagger");
-      weapons[3] = Weapon(20, 0, "Bow");
-      weapons[4] = Weapon(15, 11, "Spear");
+      weapons[0] = Weapon(5, 5, "Sword");
+      weapons[1] = Weapon(10, 1, "Axe");
+      weapons[2] = Weapon(8, 5, "Dagger");
+      weapons[3] = Weapon(13, 0, "Bow");
+      weapons[4] = Weapon(15, 15, "Spear");
 
-      monsters[0] = Enemy("Koblin", 100, 30, 45);
-      monsters[1] = Enemy("Melkor", 75, 31, 25);
-      monsters[2] = Enemy("Talrog", 75, 45, 35);
-      monsters[3] = Enemy("Bohr", 10, 110, 20);
-      monsters[4] = Enemy("Asmodeus", 200, 60, 45); // final boss
+      monsters[0] = Enemy("Koblin", 150, 35, 45);
+      monsters[1] = Enemy("Melkor", 150, 45, 25);
+      monsters[2] = Enemy("Talrog", 150, 50, 35);
+      monsters[3] = Enemy("Bohr", 60, 110, 20);
+      monsters[4] = Enemy("Asmodeus", 400, 60, 45); // final boss
       // objects for main
 	
 	MagicScroll scrolls[3];
