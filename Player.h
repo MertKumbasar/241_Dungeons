@@ -19,6 +19,11 @@ protected:
     vector<Weapon> Inventory;
 
 public:
+
+virtual void SetMagicScroll(MagicScroll &obj){
+        cout<<" ";
+    }
+
     // Default Constructor//
     Player() : Entity(){};
 
