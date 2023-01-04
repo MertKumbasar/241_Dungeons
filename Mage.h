@@ -24,7 +24,7 @@ public:
 
     }
     
-    virtual void setmagicscroll(MagicScroll &obj){
+    virtual void SetMagicScroll(MagicScroll &obj){
         scroll=obj;
     }
 
