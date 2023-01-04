@@ -84,7 +84,6 @@ void gotoxy(short x, short y) {
 }
 
 int main(){
-      
       // variables for main
       string name,player_type;
       int input,counter {0}, battle_result{0};
@@ -97,9 +96,8 @@ int main(){
       Player *player;
       Enemy monsters[5];
       Weapon weapons[2];
-
-      weapons[0] = Weapon(40,40,"sword");
-      weapons[1] = Weapon(30,30,"axe");
+      weapons[0] = Weapon(40,40,"Sword");
+      weapons[1] = Weapon(30,30,"Axe");
       // objects for main
 
    
@@ -185,12 +183,11 @@ int main(){
             }
             else if(event == 'I'){
                   system("cls");
-                  cout << weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index];
+                  cout <<"You found an item!!!"<<endl;
+                  cout<"Atributes of item are:"<<endl;
+                  cout << weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]<<endl;
                   //Returnn to map in 3 sec
                   Sleep(1000);
-            }
-            else if(event == 'H'){
-                  system("cls");
             }
 
             // reseting the event variable
