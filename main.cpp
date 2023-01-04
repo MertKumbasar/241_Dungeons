@@ -84,6 +84,7 @@ void gotoxy(short x, short y) {
 }
 
 int main(){
+      
       // variables for main
       string name,player_type;
       int input,counter {0}, battle_result{0};

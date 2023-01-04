@@ -48,6 +48,7 @@ public:
             this->attackPower = s.attackPower;
             this->defensePower = s.defensePower;
             this->Name = s.Name;
+            return *this;
         }
     }
 };
