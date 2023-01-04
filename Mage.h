@@ -51,7 +51,7 @@ public:
         cout << "Your attack power is: " << Attack << endl;
         cout << "Your mana is: " << mana << endl;
 
-        cout << "Attack and Defence bonuses: " << endl;
+        cout << "Attack and Defense bonuses gained from items: " << endl;
         for (size_t i{0}; i < Inventory.size(); i++)
         {
             cout << Inventory[i];

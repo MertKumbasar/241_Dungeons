@@ -37,14 +37,15 @@ public:
     }
 
     virtual void PrintStatus(void)
-    {   
+    {
         system("cls");
         cout << "Your name is: " << Name << endl;
         cout << "Your defense power is : " << Defense << endl;
         cout << "Your health is: " << Health << endl;
         cout << "Your attack power is: " << Attack << endl;
         cout << "Your Fury is: " << furryMeter << endl;
-        cout << "Attack and Defence bonuses: " << endl;
+
+        cout << "Attack and Defense bonuses gained from items: " << endl;
         for (size_t i{0}; i < Inventory.size(); i++)
         {
             cout << Inventory[i];

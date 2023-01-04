@@ -143,7 +143,7 @@ int main()
 
       if (player_type == "warrior")
       {
-            cout << "YOU CHOSE WARROIR" << endl
+            cout << "YOU CHOSE WARRIOR" << endl
                  << endl;
             player = new Warrior;
             printWarrior();

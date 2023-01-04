@@ -65,7 +65,7 @@ public:
     // output stream operator overloading
     friend ostream &operator<<(ostream &os, Weapon &obj)
     {
-        os << obj.getAttackPower() << "  " << obj.getdefensePower() << endl;
+        os <<"Attack power bonus: "<< obj.getAttackPower() << ", Defense power bonus: "<<"  " << obj.getdefensePower() << endl;
         return os;
     }
 };

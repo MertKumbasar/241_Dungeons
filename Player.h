@@ -44,8 +44,8 @@ public:
         // Adding Weapon to İnventory//
         Inventory.push_back(w);
 
-        cout << endl;
         cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
+        cout<<endl;
     }
 
     // method for using potion
@@ -57,10 +57,10 @@ public:
         // Player Health İncrease//
         if (Health < 100)
         {
-            if (Health += p.gethealthBonus() > 100)
+            if (Health + p.gethealthBonus() > 100)
             {
                 Health = 100;
-                cout << "Bon appétit!!" << endl;
+                cout << "Bon appetit!!" << endl;
                 cout << "Your Health is full now!!" << endl;
             }
             else
