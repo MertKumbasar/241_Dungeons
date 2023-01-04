@@ -138,7 +138,9 @@ int main()
       // objects for main
 	
 	MagicScroll scrolls[3];
-	scrolls[0]=MagicScroll(10,0,"Ates",15);
+	scrolls[0]=MagicScroll(10,0,"Fire Ball",15);
+      scrolls[1]=MagicScroll(20,0,"Lightning Bolt",30);
+      scrolls[2]=MagicScroll(100,0,"Nuke",70);
 
       printTitle();
       name = firstChapter();
@@ -163,13 +165,18 @@ int main()
             cout<<"Press 1 to x";
             cin>>ch;
             if(ch==1){
-                  
+                  player->SetMagicScroll(scrolls[0]);
             }
-            
-                  
+            else if(ch==2){
+                  player->SetMagicScroll(scrolls[1]);
+            }
+            else if(ch==3){
+                  player->SetMagicScroll(scrolls[2]);
+            } 
       
-           else  cout<<"wrong"<<endl;
-            
+            else {
+                  cout<<"wrong"<<endl;
+            }  
             mage_yes_no = 1;
             printMage();
             cout << endl;
