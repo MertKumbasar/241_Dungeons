@@ -188,6 +188,9 @@ int main(){
                   //Returnn to map in 3 sec
                   Sleep(1000);
             }
+            else if(event == 'H'){
+                  system("cls");
+            }
 
             // reseting the event variable
             event = '.';

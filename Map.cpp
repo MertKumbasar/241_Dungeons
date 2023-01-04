@@ -65,6 +65,9 @@ char Map::movePlayer_up(){
     else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
+    else if(map[temp_x][temp_y].ch == 'H'){
+        event = 'H';
+    }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_x_of_player -= 1;
@@ -82,6 +85,9 @@ char Map::movePlayer_down(){
     }
     else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
+    }
+    else if(map[temp_x][temp_y].ch == 'H'){
+        event = 'H';
     }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
@@ -101,6 +107,9 @@ char Map::movePlayer_left(){
     else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
     }
+    else if(map[temp_x][temp_y].ch == 'H'){
+        event = 'H';
+    }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_y_of_player -= 1;
@@ -118,6 +127,9 @@ char Map::movePlayer_right(){
     }
     else if(map[temp_x][temp_y].ch == 'I'){
         event = 'I';
+    }
+    else if(map[temp_x][temp_y].ch == 'H'){
+        event = 'H';
     }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
