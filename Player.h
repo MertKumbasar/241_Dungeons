@@ -33,42 +33,19 @@ public:
     
 
     // Method for adding weapon//
-    bool AddWeapon(Weapon &w)
+    void AddWeapon(Weapon &w)
     {
-        string answer;
         // Print status//
         cout << w;
-        do
-        {
-            cout << "Would you like to pick this weapon? (Yes / No): ";
-            cin >> answer;
+        // Player Stat increase//
+        Attack += w.getAttackPower();
+        Defense += w.getdefensePower();
 
-            if (answer == "yes" || answer == "Yes" || answer == "y" || answer == "Y")
-            {
-                // Player Stat increase//
-                Attack += w.getAttackPower();
-                Defense += w.getdefensePower();
+        // Adding Weapon to İnventory//
+        Inventory.push_back(w);
 
-                // Adding Weapon to İnventory//
-                Inventory.push_back(w);
-
-                cout << endl;
-                cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
-
-                return true;
-            }
-            else if (answer == "No" || answer == "no" || answer == "n" || answer == "N")
-            {
-                cout << "Well, i hope you made a good decision.." << endl;
-                cout << w.getName() << " is not added to your inventory." << endl;
-
-                return false;
-            }
-            else
-            {
-                cout << "Please enter Yes or No !.." << endl;
-          }
-        } while (answer != "yes" || answer != "Yes" || answer != "No" || answer != "no");
+        cout << endl;
+        cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
     }
 
     // method for using potion
@@ -101,16 +78,15 @@ public:
     }
 
     // function for printing player status//
-    virtual void PrintStatus(Player &p1)
-    {
-        cout << "Your name is: " << p1.Name << endl;
-        cout << "Your score is: " << p1.Score << endl;
-        cout << "Your defense power is : " << p1.Defense << endl;
-        cout << "Your health is: " << p1.Health << endl;
-        cout << "Your attack power is: " << p1.Attack << endl;
-        cout << "Your total gold is: " << p1.Total_Gold << endl;
+    virtual void PrintStatus(void)
+    {   
+        system("cls");
+        cout << "Your name is: " << Name << endl;
+        cout << "Your defense power is : " << Defense << endl;
+        cout << "Your health is: " << Health << endl;
+        cout << "Your attack power is: " << Attack << endl;
 
-        cout << "Items you have in inventory are: " << endl;
+        cout << "Attack and Defence bonuses: " << endl;
         for (size_t i{0}; i < Inventory.size(); i++)
         {
             cout << Inventory[i];

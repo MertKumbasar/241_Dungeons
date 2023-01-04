@@ -81,6 +81,20 @@ string chooseCharacter()
             }
       } while (1);
 }
+void boss_story(){
+  	cout << "-After all the war and hardship, you see a dark room with a huge entrance."<<endl;
+  	cout << "........";
+  	cout << "....";
+  	cout << "-You also enter this desolate dark room hoping to find the one you love AND suddenly the torches start burning in order......." <<endl;
+  	cout << "-With the last torch burning, you see your loved one exhausted and next to it you see a monster as gigantic as it is terrifying!!!!"<<endl;
+  	cout << "And you hear a voice. You've come at last."<<endl;
+  	cout << "The voice: You've come at last.";
+      cout << "Unfortunately your coming this far means nothing, You will be ruined at last "<<endl;
+  	cout << "-You recognize this sound and immediately draw your weapon!!"<<endl;
+  	cout << "                                  FIGHT BEGINS!!!!                                " << endl;
+  }
+
+
 
 // function to move cursor to top
 void gotoxy(short x, short y)
@@ -94,13 +108,13 @@ int main()
 {
       // variables for main
       string name, player_type;
-      int input, counter{0}, battle_result{0};
+      int input, counter{0}, battle_result{0},mage_yes_no {0};
       char event = '.';
       int game_is_on = 1;
       // variables for main
 
       // objects for main
-      Map game_map;
+      
       Player *player;
       Enemy monsters[5];
       Weapon weapons[5];
@@ -141,6 +155,7 @@ int main()
             cout << "YOU CHOSE MAGE" << endl
                  << endl;
             player = new Mage;
+            mage_yes_no = 1;
             printMage();
             cout << endl;
       }
@@ -157,7 +172,7 @@ int main()
       cout << "The voice: Then here, This is a map for you to see where you are GOOD LUCK!!" << endl;
       system("pause");
       system("cls");
-
+      Map game_map(mage_yes_no);
       while (game_is_on)
       {
             gotoxy(0, 0);
@@ -181,6 +196,11 @@ int main()
                   case 'd':
                         event = game_map.movePlayer_right();
                         break;
+                  case 'i':
+                        player->PrintStatus();
+                        system("pause");
+                        system("cls");
+                        break;
                   case 27:
                         game_map.pauseMenu();
                         system("pause");
@@ -192,22 +212,43 @@ int main()
             if (event == 'M')
             {
                   system("cls");
-                  battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
-                  system("cls");
-
-                  if (battle_result == 2)
-                  {
-                        cout << "MONSTER IS DEAD!! " << endl
-                             << "GOOD JOB" << endl;
+                  if(game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index == 4){
+                        boss_story();
+                        system("pause");
+	                  system("cls");
+                        battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
+                        if (battle_result == 2)
+                        {
+                              cout << "MONSTER IS DEAD!! " << endl
+                              << "GOOD JOB" << endl;
+                              game_is_on = 0;
+                        }
+                        else if (battle_result == 1)
+                        {
+                              cout << "COWARD !-! " << endl;
+                              game_map.movePlayer_left_if_monster_lives();
+                        }
+                        else
+                        {
+                              game_is_on = 0;
+                        }
                   }
-                  else if (battle_result == 1)
-                  {
-                        cout << "COWARD !-! " << endl;
-                        game_map.movePlayer_left_if_monster_lives();
-                  }
-                  else
-                  {
-                        game_is_on = 0;
+                  else{
+                        battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
+                        if (battle_result == 2)
+                        {
+                              cout << "MONSTER IS DEAD!! " << endl
+                              << "GOOD JOB" << endl;
+                        }
+                        else if (battle_result == 1)
+                        {
+                              cout << "COWARD !-! " << endl;
+                              game_map.movePlayer_left_if_monster_lives();
+                        }
+                        else
+                        {
+                              game_is_on = 0;
+                        }
                   }
                   system("pause");
                   system("cls");
@@ -216,10 +257,10 @@ int main()
             {
                   system("cls");
                   cout << "You found an item!!!" << endl;
-                  cout << " Atributes of item are:" << endl;
-                  cout << weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index] << endl;
-                  // Returnn to map in 3 sec
-                  Sleep(1000);
+                  cout << "Atributes of item are:" << endl;
+                  player->AddWeapon(weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
+                  system("pause");
+                  system("cls");
             }
 
             // reseting the event variable

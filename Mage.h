@@ -42,16 +42,16 @@ public:
         cout << Name << " replenishes " << amount << " mana." << endl;
     }
 
-    virtual void PrintStatus(Player &p1)
-    {
-        cout << "Your name is: " << p1.GetName() << endl;
-        cout << "Your score is: " << p1.GetScore() << endl;
-        cout << "Your defense power is : " << p1.GetDefense() << endl;
-        cout << "Your health is: " << p1.GetHealth() << endl;
-        cout << "Your attack power is: " << p1.GetAttack() << endl;
-        cout << "Your total gold is: " << p1.GetTotalGold() << endl;
+    virtual void PrintStatus(void)
+    {   
+        system("cls");
+        cout << "Your name is: " << Name << endl;
+        cout << "Your defense power is : " << Defense << endl;
+        cout << "Your health is: " << Health << endl;
+        cout << "Your attack power is: " << Attack << endl;
+        cout << "Your mana is: " << mana << endl;
 
-        cout << "Items you have in inventory are: " << endl;
+        cout << "Attack and Defence bonuses: " << endl;
         for (size_t i{0}; i < Inventory.size(); i++)
         {
             cout << Inventory[i];
@@ -150,13 +150,11 @@ public:
         // Determine the outcome of the battle
         if (Health <= 0)
         {
-            cout << "You are dead!!" << endl;
             return 0;
         }
 
         else
         {
-            cout << "Enemy is dead!!" << endl;
             return 2;
         }
     }

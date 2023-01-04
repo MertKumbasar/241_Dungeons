@@ -63,9 +63,9 @@ public:
     Weapon(int a, int d, string name) : Item(a, d, name) {}
 
     // output stream operator overloading
-    friend ostream &operator<<(ostream &os, Item &obj)
+    friend ostream &operator<<(ostream &os, Weapon &obj)
     {
-        os << obj.getName() << "  " << obj.getAttackPower() << "  " << obj.getdefensePower() << endl;
+        os << obj.getAttackPower() << "  " << obj.getdefensePower() << endl;
         return os;
     }
 };
