@@ -72,6 +72,7 @@ Map::Map(int mage_yes_no){
 }
 void Map::printMap(){
     for (size_t i = 0; i < height; i++){
+        cout << "                                                            ";
         for (size_t j = 0; j < width; j++){
           cout << map[i][j].ch << " ";
         }
