@@ -183,8 +183,8 @@ int main(){
             }
             else if(event == 'I'){
                   system("cls");
-                  cout <<"You found an item!!!"<<endl;
-                  cout<"Atributes of item are:"<<endl;
+                  cout << "You found an item!!!"<<endl;
+                  cout<< " Atributes of item are:"<<endl;
                   cout << weapons[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]<<endl;
                   //Returnn to map in 3 sec
                   Sleep(1000);
