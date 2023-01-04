@@ -136,6 +136,9 @@ int main()
       monsters[3] = Enemy("Bohr", 10, 110, 20);
       monsters[4] = Enemy("Asmodeus", 200, 60, 45); // final boss
       // objects for main
+	
+	MagicScroll scrolls[3];
+	scrolls[0]=MagicScroll(10,0,"Ates",15);
 
       printTitle();
       name = firstChapter();
@@ -151,12 +154,26 @@ int main()
       }
       else if (player_type == "mage")
       {
+          int ch;
             cout << "YOU CHOSE MAGE" << endl
                  << endl;
-            player = new Mage;
+
+            player= new Mage;
+            cout<<"Pick any scroll:"<<endl;
+            cout<<"Press 1 to x";
+            cin>>ch;
+            if(ch==1){
+                  
+            }
+            
+                  
+      
+           else  cout<<"wrong"<<endl;
+            
             mage_yes_no = 1;
             printMage();
             cout << endl;
+      
       }
       else
       {
