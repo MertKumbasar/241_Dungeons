@@ -71,7 +71,7 @@ virtual void SetMagicScroll(MagicScroll &obj){
             else
             {
                 Health += p.gethealthBonus();
-                cout << "Enjoy,your health is increased by-" << p.gethealthBonus() << "!!!" << endl;
+                cout << "Enjoy,your health is increased by: " << p.gethealthBonus() << "!!!" << endl;
                 cout << "Your health is now " << Health << "!!!" << endl;
             }
         }
