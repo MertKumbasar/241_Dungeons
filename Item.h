@@ -11,9 +11,10 @@ protected:
     int attackPower;
     int defensePower;
     string Name;
+
 public:
     // default const //
-    Item() : attackPower{0}, defensePower{0}, Name{"Unknown"}{}
+    Item() : attackPower{0}, defensePower{0}, Name{"Unknown"} {}
 
     // Overloaded Constructors//
     Item(int a, int d, string name) : attackPower{a}, defensePower{d}, Name{name} {}
@@ -23,7 +24,7 @@ public:
     // destructor
     ~Item() {}
     // copy constructor//
-    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower}{}
+    Item(const Item &obj) : attackPower{obj.attackPower}, defensePower{obj.defensePower} {}
     // move const ????
 
     // Getters//
@@ -36,7 +37,7 @@ public:
     void setdefensePower(int defensePower) { this->defensePower = defensePower; };
     void setName(string Name) { this->Name = Name; };
 
-        // copy asignment operator overloading
+    // copy asignment operator overloading
     virtual Item &operator=(const Item &s)
     {
         if (this == &s)
@@ -64,7 +65,7 @@ public:
     // output stream operator overloading
     friend ostream &operator<<(ostream &os, Item &obj)
     {
-        os << obj.getName()<<"  " << obj.getAttackPower()<<"  "  << obj.getdefensePower()<<endl;
+        os << obj.getName() << "  " << obj.getAttackPower() << "  " << obj.getdefensePower() << endl;
         return os;
     }
 };
@@ -80,7 +81,7 @@ public:
     MagicScroll() : Item(), ManaCost{0} {}
 
     // Overloaded Constructor
-    MagicScroll(int a, int d, string name, int mc  ) : Item (a, d, name), ManaCost{mc} {}
+    MagicScroll(int a, int d, string name, int mc) : Item(a, d, name), ManaCost{mc} {}
 
     // getter
     int getManaCost() { return ManaCost; };
@@ -99,7 +100,7 @@ public:
     Potion() : Item(), healthBonus{25} {}
 
     // Overloaded Constructor
-    Potion(string name, int bonus) : Item(name), healthBonus{bonus}{}
+    Potion(string name, int bonus) : Item(name), healthBonus{bonus} {}
 
     // Getter
     int gethealthBonus() { return healthBonus; };

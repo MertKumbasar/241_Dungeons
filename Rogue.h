@@ -49,7 +49,7 @@ public:
         srand(time(NULL));
         int damage, flag = 0, choice, rnd;
         string Escape;
-        cout << Name << ", be careful. There occurs a dangerous monster called" << e.GetName() << endl;
+        cout << Name << ", be careful. There occurs a dangerous monster called " << e.GetName() << endl;
         cout << " Get ready for the battle!!" << endl;
         cout << endl;
         while (e.GetHealth() > 0 && Health > 0)

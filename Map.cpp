@@ -30,21 +30,30 @@ Map::Map(){
         }    
     }
     map[dir_x_of_player][dir_y_of_player].ch = 'P';
-    map[1][3].ch = 'M';
-    map[1][3].index = 0;
+    
     map[2][7].ch = 'M';
-    map[2][7].index = 1;
+    map[2][7].index = 0;
     map[5][9].ch = 'M';
-    map[5][9].index = 2;
-    map[10][3].ch = 'M';
-    map[10][3].index = 3;
-    map[14][5].ch = 'M';
-    map[14][5].index = 4;
+    map[5][9].index = 1;
+    map[][9].ch = 'M';
+    map[17][9].index = 2;
+    map[12][14].ch = 'M';
+    map[12][14].index = 3;
+    map[18][18].ch = 'M';
+    map[18][18].index = 4;
 
     map[1][2].ch = 'I';
     map[1][2].index = 0;
     map[2][6].ch = 'I';
     map[2][6].index = 1;
+    map[5][15].ch = 'I';
+    map[5][15].index = 2;
+    map[11][2].ch = 'I' ;
+    map[11][2].index = 3;
+    map[18][11].ch='I';
+    map[18][11].index = 4;
+
+
     
 }
 void Map::printMap(){

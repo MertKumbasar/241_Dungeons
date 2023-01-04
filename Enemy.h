@@ -12,7 +12,7 @@ public:
     Enemy() : Entity() {}
 
     // overloaded constructors
-    Enemy(string name) : Entity(name) {}
+    Enemy(string name, int h, int a, int d) : Entity(name, h, a, d) {}
 
     // destructor
     ~Enemy() {}

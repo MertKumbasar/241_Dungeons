@@ -103,16 +103,25 @@ int main()
       Map game_map;
       Player *player;
       Enemy monsters[5];
-      Weapon weapons[2];
-      
-      weapons[0] = Weapon(40, 40, "Sword");
-      weapons[1] = Weapon(30, 30, "Axe");
+      Weapon weapons[5];
+      Potion potions[4];
 
-      monsters[0] = Enemy("Goblin");
-      monsters[1] = Enemy("Asmodeus");
-      monsters[2] = Enemy("Balrog");
-      monsters[3] = Enemy("Bohr");
-      monsters[4] = Enemy("Melkor");
+      potions[0] = Potion("mini_health_potion", 25);
+      potions[1] = Potion("medium_health_potion", 50);
+      potions[2] = Potion("large_health_potion", 70);
+      potions[3] = Potion("Health_Elixir", 100);
+
+      weapons[0] = Weapon(23, 21, "Sword");
+      weapons[1] = Weapon(16, 2, "Axe");
+      weapons[2] = Weapon(8, 7, "Dagger");
+      weapons[3] = Weapon(20, 0, "Bow");
+      weapons[4] = Weapon(15, 11, "Spear");
+
+      monsters[0] = Enemy("Koblin", 100, 21, 45);
+      monsters[1] = Enemy("Melkor", 12, 10, 25);
+      monsters[2] = Enemy("Talrog", 75, 75, 35);
+      monsters[3] = Enemy("Bohr", 10, 110, 20);
+      monsters[4] = Enemy("Asmodeus", 200, 60, 45); // final boss
       // objects for main
 
       printTitle();
