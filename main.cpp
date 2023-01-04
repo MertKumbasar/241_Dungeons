@@ -108,7 +108,7 @@ int main()
 {
       // variables for main
       string name, player_type;
-      int input, counter{0}, battle_result{0},mage_yes_no {0};
+      int input, counter{0}, battle_result{0};
       char event = '.';
       int game_is_on = 1;
       // variables for main
@@ -161,23 +161,28 @@ int main()
                  << endl;
 
             player= new Mage;
-            cout<<"Pick any scroll:"<<endl;
-            cout<<"Press 1 to x";
-            cin>>ch;
-            if(ch==1){
-                  player->SetMagicScroll(scrolls[0]);
-            }
-            else if(ch==2){
-                  player->SetMagicScroll(scrolls[1]);
-            }
-            else if(ch==3){
-                  player->SetMagicScroll(scrolls[2]);
-            } 
-      
-            else {
-                  cout<<"wrong"<<endl;
-            }  
-            mage_yes_no = 1;
+            do{
+                  cout<<"Pick any scroll: "<<endl;
+                  cout<<"Press 1 to choose Fire Ball (low mana low damage)" << endl;
+                  cout<<"Press 2 to choose Lightning Bolt  (mid mana mid damage)" << endl;
+                  cout<<"Press 3 to choose Nuke (high mana high damage)" << endl;
+                  cin>>ch;
+                  if(ch==1){
+                        player->SetMagicScroll(scrolls[0]);
+                  }
+                  else if(ch==2){
+                        player->SetMagicScroll(scrolls[1]);
+                  }
+                  else if(ch==3){
+                        player->SetMagicScroll(scrolls[2]);
+                  } 
+                  else {
+                        cout<<"İnvalid number"<<endl;
+                  }  
+            }while(ch != 1 && ch != 2 && ch && 3);
+
+           
+            
             printMage();
             cout << endl;
       
