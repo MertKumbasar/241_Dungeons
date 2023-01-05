@@ -179,7 +179,7 @@ int main()
                   else {
                         cout<<"İnvalid number"<<endl;
                   }  
-            }while(ch != 1 && ch != 2 && ch && 3);
+            }while(ch != 1 && ch != 2 && ch !=3);
 
            
             
