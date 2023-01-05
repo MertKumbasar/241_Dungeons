@@ -33,8 +33,8 @@ Map::Map(){
     
     map[2][7].ch = 'M';
     map[2][7].index = 0;
-    map[5][9].ch = 'M';
-    map[5][9].index = 1;
+    map[6][9].ch = 'M';
+    map[6][9].index = 1;
     map[10][13].ch = 'M';
     map[10][13].index = 2;
     map[15][19].ch = 'M';
