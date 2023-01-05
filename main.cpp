@@ -134,7 +134,7 @@ int main()
       monsters[1] = Enemy("Melkor", 150, 45, 25);
       monsters[2] = Enemy("Talrog", 150, 50, 35);
       monsters[3] = Enemy("Bohr", 60, 110, 20);
-      monsters[4] = Enemy("Asmodeus", 400, 60, 45); // final boss
+      monsters[4] = Enemy("Asmodeus", 350, 60, 45); // final boss
       // objects for main
 	
 	MagicScroll scrolls[3];
@@ -202,7 +202,7 @@ int main()
       system("cls");
       while (game_is_on)
       {
-            gotoxy(0, 0);
+           system("cls");
 
             game_map.printMap();
             Sleep(100);
