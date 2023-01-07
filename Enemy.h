@@ -24,7 +24,7 @@ public:
 
 class RPC{
     private:
-      string *Mrpc {nullptr},Computer_Name;
+      string *c {nullptr},Computer_Name;
       int index;
       int winner1,winner2;
 
@@ -36,6 +36,9 @@ class RPC{
           Mrpc[1]="paper";
           Mrpc[2]="scissors";        
       }
+    ~RPC(){
+        delete [] Mrpc;
+    }
       
       int GetWinner (string x, string y){
 
