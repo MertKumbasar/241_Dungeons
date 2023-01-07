@@ -202,7 +202,7 @@ int main()
       system("cls");
       while (game_is_on)
       {
-           system("cls");
+           gotoxy(0,0);
 
             game_map.printMap();
             Sleep(100);
