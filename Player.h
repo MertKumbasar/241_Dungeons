@@ -19,9 +19,9 @@ protected:
     vector<Weapon> Inventory;
 
 public:
-
-virtual void SetMagicScroll(MagicScroll &obj){
-        cout<<" ";
+    virtual void SetMagicScroll(MagicScroll &obj)
+    {
+        cout << " ";
     }
 
     // Default Constructor//
@@ -34,8 +34,6 @@ virtual void SetMagicScroll(MagicScroll &obj){
 
     // Destructor//
     ~Player() {}
-
-    
 
     // Method for adding weapon//
     void AddWeapon(Weapon &w)
@@ -50,12 +48,12 @@ virtual void SetMagicScroll(MagicScroll &obj){
         Inventory.push_back(w);
 
         cout << w.getName() << " added to your inventory!! Use it wisely." << endl;
-        cout<<endl;
+        cout << endl;
     }
 
     // method for using potion
     void DrinkPotion(Potion &p)
-    {  
+    {
         // printing health bonus of the potion
         p.printHealthBonus();
 
@@ -84,7 +82,7 @@ virtual void SetMagicScroll(MagicScroll &obj){
 
     // function for printing player status//
     virtual void PrintStatus(void)
-    {   
+    {
         system("cls");
         cout << "Your name is: " << Name << endl;
         cout << "Your defense power is : " << Defense << endl;

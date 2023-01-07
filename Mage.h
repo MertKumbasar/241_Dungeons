@@ -15,17 +15,15 @@ class Mage : public Player
 {
 
 private:
-    
     int mana;
     MagicScroll scroll;
+
 public:
+    Mage() : mana{100} {}
 
-    Mage(): mana{100} {
-
-    }
-    
-    virtual void SetMagicScroll(MagicScroll &obj){
-        scroll=obj;
+    virtual void SetMagicScroll(MagicScroll &obj)
+    {
+        scroll = obj;
     }
 
     bool castSpell()
@@ -33,7 +31,7 @@ public:
         if (mana >= scroll.getManaCost())
         {
             mana -= scroll.getManaCost();
-            cout << Name << " casts a spell, using " <<scroll.getManaCost()<< " mana." << endl;
+            cout << Name << " casts a spell, using " << scroll.getManaCost() << " mana." << endl;
             return true;
         }
         else
@@ -50,7 +48,7 @@ public:
     }
 
     virtual void PrintStatus(void)
-    {   
+    {
         system("cls");
         cout << "Your name is: " << Name << endl;
         cout << "Your defense power is : " << Defense << endl;

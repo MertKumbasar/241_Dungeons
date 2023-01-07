@@ -27,10 +27,11 @@ public:
         cout << Name << " increases their fury meter " << endl;
     }
 
-    int unleashFurry()
+    int unleashFurry(void)
     {
         int temp = 0;
-        if(furryMeter > 100){
+        if (furryMeter > 100)
+        {
             furryMeter = 100;
         }
         temp = furryMeter;
