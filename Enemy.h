@@ -80,17 +80,22 @@ public:
     {
         int rnd;
         random_device rd;
-        mt19937 gen(rd());
-        uniform_int_distribution<> dis(1, 3);
-
-        rnd = dis(gen);
-
         string round, computer;
 
         do
         {
+            mt19937 gen(rd());
+            uniform_int_distribution<> dis(0, 2);
+            rnd = dis(gen);
+            
+            if(Mrpc[rnd]=="rock")
+              computer= "rock";
 
-            computer = Mrpc[rnd];
+            else if(Mrpc[rnd]=="paper")
+              computer= "paper";
+
+            else if(Mrpc[rnd]=="scissors")
+              computer= "scissors";
 
             cout << "Enter Your Choice: " << endl;
             cin >> round;
