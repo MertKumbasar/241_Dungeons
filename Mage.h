@@ -91,7 +91,7 @@ public:
                 ;
             }
             else if (choice == 2)
-            { // casspell
+            { // castspell
 
                 if (castSpell())
                     damage = scroll.getAttackPower();
