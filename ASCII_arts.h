@@ -51,7 +51,7 @@ void printWarrior(void){
         cout <<"            /  / ||   {&}   |"<<endl;
         cout <<"           (  / ( \\         /"<<endl;
         cout <<"           / /   \' -.___.-'"<<endl;
-        cout <<"     jgs _/ /     \\ \\"<<endl;
+        cout <<"         _/ /     \\ \\"<<endl;
         cout <<"        /___|    /___|"<<endl;
 }  
 void printMage(void){

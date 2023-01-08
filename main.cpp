@@ -38,6 +38,7 @@ int main()
       Enemy monsters[5];
       Weapon weapons[5];
       Potion potions[4];
+      MagicScroll scrolls[3];
 
       potions[0] = Potion("mini_health_potion", 25);
       potions[1] = Potion("large_health_potion", 50);
@@ -48,14 +49,13 @@ int main()
       weapons[3] = Weapon(13, 0, "Bow");
       weapons[4] = Weapon(15, 15, "Spear");
 
-      monsters[0] = Enemy("Koblin", 150, 35, 45);
-      monsters[1] = Enemy("Melkor", 150, 45, 25);
-      monsters[2] = Enemy("Talrog", 150, 50, 35);
+      monsters[0] = Enemy("Koblin", 100, 35, 45); 
+      monsters[1] = Enemy("Melkor", 100, 45, 25);
+      monsters[2] = Enemy("Talrog", 100, 50, 35);
       monsters[3] = Enemy("Bohr", 60, 110, 20);
       monsters[4] = Enemy("Asmodeus", 350, 60, 45); // final boss
                                                     
 
-      MagicScroll scrolls[3];
       scrolls[0] = MagicScroll(10, 0, "Fire Ball", 15);
       scrolls[1] = MagicScroll(20, 0, "Lightning Bolt", 30);
       scrolls[2] = MagicScroll(100, 0, "Nuke", 70);
