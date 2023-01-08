@@ -184,9 +184,9 @@ void Map::pauseMenu(void){
     cout << "---- MAP LEGEND ------"<<endl;
     cout << "P is PLAYER"<<endl;
     cout << "M is MONSTER"<<endl;
-    cout << "I is Item"<<endl;
+    cout << "I is ITEM"<<endl;
     cout << "H is HEALTH POTION" << endl;
-    cout << "G is Mini Game"<<endl;
+    cout << "G is MİNİ GAME"<<endl;
 }
 
 
