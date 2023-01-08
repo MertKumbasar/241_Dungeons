@@ -48,9 +48,12 @@ string firstChapter()
             {
                   cout << "The Voice :  Thats a good question my friend but i think the answer is deep down in the dungeon" << endl;
             }
-      } while (answer != 3);
-      system("cls");
-      return name;
+            else if (answer == 3)
+            {
+                  system("cls");
+                  return name;
+            }
+      } while (answer != 1 || answer != 2 || answer != 3);
 }
 string chooseCharacter()
 {
@@ -78,7 +81,7 @@ string chooseCharacter()
             }
             else
             {
-                  cout << "enter a vaild input" << endl;
+                  cout << "enter a valid input" << endl;
             }
       } while (1);
 }
@@ -182,7 +185,7 @@ int main()
                   }
                   else
                   {
-                        cout << "İnvalid number" << endl;
+                        cout << "Invalid number" << endl;
                   }
             } while (ch != 1 && ch != 2 && ch != 3);
 
