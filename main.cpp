@@ -10,6 +10,7 @@
 #include "Warrior.h"
 #include "Mage.h"
 #include "Rogue.h"
+#include "MiniGame.h"
 
 // template <typename T >
 //  int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
@@ -81,20 +82,19 @@ string chooseCharacter()
             }
       } while (1);
 }
-void boss_story(){
-  	cout << "-After all the war and hardship, you see a dark room with a huge entrance."<<endl;
-  	cout << "........";
-  	cout << "....";
-  	cout << "-You also enter this desolate dark room hoping to find the one you love AND suddenly the torches start burning in order......." <<endl;
-  	cout << "-With the last torch burning, you see your loved one exhausted and next to it you see a monster as gigantic as it is terrifying!!!!"<<endl;
-  	cout << "And you hear a voice. You've come at last."<<endl;
-  	cout << "The voice: You've come at last.";
-      cout << "Unfortunately your coming this far means nothing, You will be ruined at last "<<endl;
-  	cout << "-You recognize this sound and immediately draw your weapon!!"<<endl;
-  	cout << "                                  FIGHT BEGINS!!!!                                " << endl;
-  }
-
-
+void boss_story()
+{
+      cout << "-After all the war and hardship, you see a dark room with a huge entrance." << endl;
+      cout << "........";
+      cout << "....";
+      cout << "-You also enter this desolate dark room hoping to find the one you love AND suddenly the torches start burning in order......." << endl;
+      cout << "-With the last torch burning, you see your loved one exhausted and next to it you see a monster as gigantic as it is terrifying!!!!" << endl;
+      cout << "And you hear a voice. You've come at last." << endl;
+      cout << "The voice: You've come at last.";
+      cout << "Unfortunately your coming this far means nothing, You will be ruined at last " << endl;
+      cout << "-You recognize this sound and immediately draw your weapon!!" << endl;
+      cout << "                                  FIGHT BEGINS!!!!                                " << endl;
+}
 
 // function to move cursor to top
 void gotoxy(short x, short y)
@@ -114,6 +114,7 @@ int main()
       // variables for main
 
       // objects for main
+      RPC game1;
       Map game_map;
       Player *player;
       Enemy monsters[5];
@@ -122,7 +123,6 @@ int main()
 
       potions[0] = Potion("mini_health_potion", 25);
       potions[1] = Potion("large_health_potion", 50);
-      
 
       weapons[0] = Weapon(5, 5, "Sword");
       weapons[1] = Weapon(10, 1, "Axe");
@@ -135,12 +135,12 @@ int main()
       monsters[2] = Enemy("Talrog", 150, 50, 35);
       monsters[3] = Enemy("Bohr", 60, 110, 20);
       monsters[4] = Enemy("Asmodeus", 350, 60, 45); // final boss
-      // objects for main
-	
-	MagicScroll scrolls[3];
-	scrolls[0]=MagicScroll(10,0,"Fire Ball",15);
-      scrolls[1]=MagicScroll(20,0,"Lightning Bolt",30);
-      scrolls[2]=MagicScroll(100,0,"Nuke",70);
+                                                    // objects for main
+
+      MagicScroll scrolls[3];
+      scrolls[0] = MagicScroll(10, 0, "Fire Ball", 15);
+      scrolls[1] = MagicScroll(20, 0, "Lightning Bolt", 30);
+      scrolls[2] = MagicScroll(100, 0, "Nuke", 70);
 
       printTitle();
       name = firstChapter();
@@ -156,36 +156,38 @@ int main()
       }
       else if (player_type == "mage")
       {
-          int ch;
+            int ch;
             cout << "YOU CHOSE MAGE" << endl
                  << endl;
 
-            player= new Mage;
-            do{
-                  cout<<"Pick any scroll: "<<endl;
-                  cout<<"Press 1 to choose Fire Ball (low mana low damage)" << endl;
-                  cout<<"Press 2 to choose Lightning Bolt  (mid mana mid damage)" << endl;
-                  cout<<"Press 3 to choose Nuke (high mana high damage)" << endl;
-                  cin>>ch;
-                  if(ch==1){
+            player = new Mage;
+            do
+            {
+                  cout << "Pick any scroll: " << endl;
+                  cout << "Press 1 to choose Fire Ball (low mana low damage)" << endl;
+                  cout << "Press 2 to choose Lightning Bolt  (mid mana mid damage)" << endl;
+                  cout << "Press 3 to choose Nuke (high mana high damage)" << endl;
+                  cin >> ch;
+                  if (ch == 1)
+                  {
                         player->SetMagicScroll(scrolls[0]);
                   }
-                  else if(ch==2){
+                  else if (ch == 2)
+                  {
                         player->SetMagicScroll(scrolls[1]);
                   }
-                  else if(ch==3){
+                  else if (ch == 3)
+                  {
                         player->SetMagicScroll(scrolls[2]);
-                  } 
-                  else {
-                        cout<<"İnvalid number"<<endl;
-                  }  
-            }while(ch != 1 && ch != 2 && ch !=3);
+                  }
+                  else
+                  {
+                        cout << "İnvalid number" << endl;
+                  }
+            } while (ch != 1 && ch != 2 && ch != 3);
 
-           
-            
             printMage();
             cout << endl;
-      
       }
       else
       {
@@ -202,7 +204,7 @@ int main()
       system("cls");
       while (game_is_on)
       {
-           gotoxy(0,0);
+            gotoxy(0, 0);
 
             game_map.printMap();
             Sleep(100);
@@ -239,15 +241,16 @@ int main()
             if (event == 'M')
             {
                   system("cls");
-                  if(game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index == 4){
+                  if (game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index == 4)
+                  {
                         boss_story();
                         system("pause");
-	                  system("cls");
+                        system("cls");
                         battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
                         if (battle_result == 2)
                         {
                               cout << "MONSTER IS DEAD!! " << endl
-                              << "GOOD JOB" << endl;
+                                   << "GOOD JOB" << endl;
                               game_is_on = 0;
                         }
                         else if (battle_result == 1)
@@ -260,12 +263,13 @@ int main()
                               game_is_on = 0;
                         }
                   }
-                  else{
+                  else
+                  {
                         battle_result = player->battle(monsters[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
                         if (battle_result == 2)
                         {
                               cout << "MONSTER IS DEAD!! " << endl
-                              << "GOOD JOB" << endl;
+                                   << "GOOD JOB" << endl;
                         }
                         else if (battle_result == 1)
                         {
@@ -289,11 +293,21 @@ int main()
                   system("pause");
                   system("cls");
             }
-            else if (event == 'H'){
+            else if (event == 'H')
+            {
                   system("cls");
                   cout << "You found an potion!!!" << endl;
                   cout << "Atributes of potion are:" << endl;
                   player->DrinkPotion(potions[game_map.map[game_map.dir_x_of_player][game_map.dir_y_of_player].index]);
+                  system("pause");
+                  system("cls");
+            }
+            else if (event == 'G')
+            {
+                  system("cls");
+                  cout << "You entered MINI GAME AREA !!" << endl;
+                  cout << "Have fun playing !" << endl;
+                  game1.CheckResult();
                   system("pause");
                   system("cls");
             }

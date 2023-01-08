@@ -60,7 +60,9 @@ Map::Map(){
     map[13][3].ch = 'H';
     map[13][3].index = 1;
 
-
+    map[9][7].ch='G';
+    map[7][13].ch='G';
+    map[13][11].ch='G';
     
 }
 void Map::printMap(){
@@ -85,6 +87,9 @@ char Map::movePlayer_up(){
     else if(map[temp_x][temp_y].ch == 'H'){
         event = 'H';
     }
+    else if(map[temp_x][temp_y].ch == 'G'){
+        event = 'G';
+    }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_x_of_player -= 1;
@@ -105,6 +110,9 @@ char Map::movePlayer_down(){
     }
     else if(map[temp_x][temp_y].ch == 'H'){
         event = 'H';
+    }
+    else if(map[temp_x][temp_y].ch == 'G'){
+        event = 'G';
     }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
@@ -127,6 +135,9 @@ char Map::movePlayer_left(){
     else if(map[temp_x][temp_y].ch == 'H'){
         event = 'H';
     }
+    else if(map[temp_x][temp_y].ch == 'G'){
+        event = 'G';
+    }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
         dir_y_of_player -= 1;
@@ -147,6 +158,9 @@ char Map::movePlayer_right(){
     }
     else if(map[temp_x][temp_y].ch == 'H'){
         event = 'H';
+    }
+    else if(map[temp_x][temp_y].ch == 'G'){
+        event = 'G';
     }
     if(map[temp_x][temp_y].ch != '#'){
         map[dir_x_of_player][dir_y_of_player].ch = '.';
@@ -172,7 +186,7 @@ void Map::pauseMenu(void){
     cout << "M is MONSTER"<<endl;
     cout << "I is Item"<<endl;
     cout << "H is HEALTH POTION" << endl;
-    
+    cout << "G is Mini Game"<<endl;
 }
 
 
