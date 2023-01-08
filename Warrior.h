@@ -71,7 +71,7 @@ public:
         {
             cout << "Choose your attack:" << endl;
             cout << "1. Basic Attack" << endl;
-            cout << "2. Special Attack" << endl; // speacil attack bizim heroya bağlı olabilir böylece
+            cout << "2. Special Attack" << endl;
             cout << "3. Defend" << endl;
             cin >> choice;
 
@@ -98,7 +98,7 @@ public:
             {
 
                 cout << "Player defended and your defense is increased" << endl
-                     << endl; // item gücü kadar defense artabilir şimdilik böyle kalsın elleme???
+                     << endl;
             }
 
             // Enemy turn

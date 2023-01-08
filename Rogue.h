@@ -107,7 +107,7 @@ public:
 
             if (Health < 30 && e.GetHealth() > 30 && Health > 0)
             {
-                cout << "Your Healt is: " << Health << endl;
+                cout << "Your Health is: " << Health << endl;
                 cout << "Enemy's health  is: " << e.GetHealth() << endl;
                 cout << "Would you like to RUN AWAY!??" << endl;
                 cout << "Yes or NO (DO NO TRY TO RUN!):" << endl;

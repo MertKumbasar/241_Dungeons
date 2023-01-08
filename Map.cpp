@@ -188,5 +188,3 @@ void Map::pauseMenu(void){
     cout << "H is HEALTH POTION" << endl;
     cout << "G is MINI GAME"<<endl;
 }
-
-

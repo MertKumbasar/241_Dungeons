@@ -12,11 +12,6 @@
 #include "Rogue.h"
 #include "MiniGame.h"
 
-// template <typename T >
-//  int *menuCH1 (const T *index){ //secimleri burada tutuyoruz
-
-// }
-
 string firstChapter()
 {
       string name;
